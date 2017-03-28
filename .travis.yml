@@ -31,11 +31,11 @@ install:
 - travis_retry yarn
 - composer install -o --prefer-dist --no-interaction
 deploy:
-  - provider: script
-    script: sh $TRAVIS_BUILD_DIR/scripts/deploy.sh
-    skip_cleanup: true
-    on:
-      branch: master
+- provider: script
+  script: sh $TRAVIS_BUILD_DIR/scripts/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
 script:
 - yarn run test
 - yarn run build
