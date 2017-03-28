@@ -1,0 +1,44 @@
+language: php
+sudo: false
+dist: trusty
+php:
+- 7.0
+- 5.6
+env:
+- TRAVIS_NODE_VERSION="6"
+matrix:
+  fast_finish: true
+cache:
+  apt: true
+  directories:
+  - "$HOME/.composer/cache"
+  - "$HOME/.yarn-cache"
+  - vendor
+addons:
+  ssh_known_hosts: 192.241.253.33
+before_install:
+- openssl aes-256-cbc -K $encrypted_4254645629d3_key -iv $encrypted_4254645629d3_iv
+  -in franc-travis.enc -out franc-travis -d
+- rm franc-travis.enc
+- chmod 600 franc-travis
+- mv franc-travis ~/.ssh/id_rsa
+- composer self-update
+- source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
+- export PATH=$HOME/.yarn/bin:$PATH && travis_retry curl -o- -L https://yarnpkg.com/install.sh
+  | bash
+install:
+- node -v && yarn -V
+- travis_retry yarn
+- composer install -o --prefer-dist --no-interaction
+deploy:
+  - provider: script
+    script: sh $TRAVIS_BUILD_DIR/scripts/deploy.sh
+    skip_cleanup: true
+    on:
+      branch: master
+script:
+- yarn run test
+- yarn run build
+- yarn run rmdist
+- yarn run "build:production"
+- composer test

@@ -1,0 +1,32 @@
+.contact {
+  &__header {
+    color: color(gray--medium);
+    font-weight: 700;
+    line-height: rem(51);
+
+    margin: 0;
+
+    &:after { @include underscore; }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__listItem {
+    a {
+      line-height: rem(51);
+      font-weight: 500;
+      color: color(gray--dark)
+    }
+  }
+
+  &__address {
+    line-height: rem(51);
+    font-weight: 500;
+    color: color(gray--dark);
+    font-style: normal;
+  }
+}

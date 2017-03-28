@@ -1,0 +1,41 @@
+
+/*
+ *  Reset Styles in addition to normalize
+ */
+
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr {
+  margin-top: 0;
+  margin-bottom: rem(18);
+}
+
+html {
+  background-color: color(gray);
+  font-size: 18px;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid color(gray--medium);
+}
+
+ul, ol {
+  text-align: left;
+  padding-left: rem(18);
+}
+
+
+body {
+  position: relative;
+}
+
+.container {
+  max-width: break(xxl);
+  margin: 0 auto;
+  padding: 0 rem(36);
+}
+
+.container--fullHeight {
+  height: 100vh;
+}

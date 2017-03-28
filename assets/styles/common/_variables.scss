@@ -1,0 +1,56 @@
+/*
+ *  Global variables
+ *  Component specific colors should be in that component's scss file.
+ */
+
+ /*
+  * Adjusts baseline font size.
+  * Vertical rhythm is set through this baseline.
+  * REM values will be based of this
+  */
+
+$baseline: 18;
+
+/*
+ * Colors 🖌
+ * Usage: background: color(orange);
+ */
+
+$color-map: (
+  red          : #DD2A00,
+  gray         : #E1F0F0,
+  gray--medium : #95A4A4,
+  gray--dark   : #3C4141,
+  white        : #FFFFFF,
+);
+
+/*
+ * Outputs breakpoint value 📱
+ * Usage: @media screen and (min-width: break(md)) { ... }
+ */
+
+$breakpoints: (
+  sm: 450px, // 30em,
+  md: 720px, // 48em,
+  lg: 960px, // 64em,
+  xl: 1200px, // 80em,
+  xxl: 1470px //98em,
+);
+
+/*
+ * Outputs box shadow 🆒
+ * Usage: box-shadow: shadow(2);
+ * Concatenates all shodows below selected level.
+ * shadow(3) will output 1, 2, and 3 together.
+ */
+
+$shadows: (
+  1: 0px 1px 2px rgba(#414146, 0.1),
+  2: 0px 5px 9px rgba(#414146, 0.14),
+  3: 0px 10px 30px rgba(#414146, 0.16)
+);
+
+$nav-width: 6rem;
+$secondary-nav-width: 10rem;
+
+$roboto: 'Roboto', sans-serif;

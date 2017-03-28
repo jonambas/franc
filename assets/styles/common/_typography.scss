@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+html {
+  color: color(gray--dark);
+  font-size: $baseline + 0px;
+}
+
+body {
+  font:{
+    size: rem(18);
+    family: $roboto;
+    weight: 400;
+  }
+  line-height: 2em;
+}
+
+
+::selection {
+  color: #111;
+  background: #D6EDFF;
+  text-shadow: none;
+}
+
+a {
+  color: color(red);
+  transition: 0.15s;
+  text-decoration: none;
+
+  &:hover {
+    color: color(red);
+    text-decoration: underline;;
+  }
+}
+
+p {
+  color: color(gray--dark);
+}
+
+%header {
+  margin-top: 0;
+  margin-bottom: rem(18);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: color(gray--dark);
+
+  font:{
+    family: $roboto;
+    weight: 600;
+  }
+
+  *+& {
+    // Adds a little top padding to headers, unless it is first child
+    // padding-top: rem(3);
+  }
+
+  &::selection{
+    //color: #000;
+  }
+}
+
+// Header Sizing
+$headers: (h1: 30, h2: 27, h3: 24, h4: 21, h5: 18, h6: 18);
+
+@each $header, $size in $headers {
+  #{$header} {
+    @extend %header;
+    font-size: rem($size);
+  }
+}
+
+code, pre {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding: 4px 5px;
+  border-radius: 2px;
+
+  white-space: nowrap;
+  line-height: 1.5em;
+}
+
+@mixin underscore {
+  display: block;
+  content: "";
+  margin-bottom: rem(21);
+  height: rem(3);
+  width: rem(33);
+  background: color(gray--medium);
+}
+
+.underscore:after { @include underscore; }

@@ -1,0 +1,147 @@
+.text--center {
+  text-align: center;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.float--right {
+  float: right;
+}
+
+.float--left {
+  float: left;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+/*
+Box Helpers
+ This is to ensure vertical rhythm and spacing consistency.
+ Most block elements and components have a margin bottom of rem(1).
+ Do NOT use .padding on .flex or .col elements unless you do not have a gutter width.
+ (unless you know what you are doing)
+*/
+
+$box-map: (
+  none: 0,
+  xxs: rem(6),
+  xs: rem(9),
+  sm: rem(12),
+  md: rem(18),
+  lg: rem(36),
+  xl: rem(54),
+  xxl: rem(72)
+);
+
+@each $size, $n in $box-map {
+
+  // Margins
+  .margin--#{$size} {
+    margin: #{$n} !important;
+  }
+
+  .marginTop--#{$size} {
+    margin-top: #{$n} !important;
+  }
+
+  .marginRight--#{$size} {
+    margin-right: #{$n} !important;
+  }
+
+  .marginBottom--#{$size} {
+    margin-bottom: #{$n} !important;
+  }
+
+  .marginLeft--#{$size} {
+    margin-left: #{$n} !important;
+  }
+
+
+  // Padding
+  .padding--#{$size} {
+    padding: #{$n} !important;
+  }
+
+  .paddingTop--#{$size} {
+    padding-top: #{$n} !important;
+  }
+
+  .paddingRight--#{$size} {
+    padding-right: #{$n} !important;
+  }
+
+  .paddingBottom--#{$size} {
+    padding-bottom: #{$n} !important;
+  }
+
+  .paddingLeft--#{$size} {
+    padding-left: #{$n} !important;
+  }
+
+  // Line Height
+  .line--#{$size} {
+    line-height: #{$n} !important;
+  }
+}
+
+/*
+  Responsive Helpers
+*/
+
+.hide--lg {
+  @media screen and (min-width: break(lg)) {
+    display: none;
+  }
+}
+
+.hide--md {
+  @media screen and (min-width: break(md)) {
+    display: none;
+  }
+}
+
+.hide--sm {
+  @media screen and (min-width: break(sm)) {
+    display: none;
+  }
+}
+
+
+/* Display Helpers */
+.h-invisible {
+  visibility: hidden;
+}
+
+.h-hide {
+  display: none !important;
+}
+
+.h-inline {
+  display: inline;
+}
+
+.h-block {
+  display: block !important;
+}
+
+.h-inline-block {
+  display: inline-block;
+}
+
+/* VA */
+.va-t {
+  display: table;
+  width: 100%;
+  .va-tc {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

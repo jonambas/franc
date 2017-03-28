@@ -1,0 +1,85 @@
+$nav-height: rem(105);
+
+.navigation {
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $nav-height;
+    z-index: 1;
+  }
+
+  &__bar {
+    float: right;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+    }
+
+    ul > li {
+      display: inline-block;
+      padding: 0;
+      margin-right: -4px;
+    }
+
+    ul > li > a {
+      position: relative;
+      display: block;
+      padding: rem(57) rem(28) rem(18);
+      width: rem(120);
+      background: color(red);
+      color: color(white);
+      font-weight: 400;
+      font-size: rem(18);
+      text-align: center;
+      white-space: nowrap;
+
+      &:hover, &:active, &:focus {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(to right, rgba(#000, 0) 75%, rgba(#000, 0.25));
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.brand {
+  float: left;
+
+  &__link {
+    display: block;
+  }
+
+  &__logo {
+    display: block;
+    padding: $nav-height*.66 0 0;
+    height: $nav-height*.33;
+    width: auto;
+
+    body.home & {
+      fill: color(white);
+    }
+
+    body.company, body.contact &, body.case-studies & {
+      fill: color(red);
+    }
+  }
+}
+
+.navOffset {
+  padding-top: $nav-height * 2;
+}
