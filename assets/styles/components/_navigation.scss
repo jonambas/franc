@@ -21,7 +21,11 @@ $nav-height: rem(105);
     ul > li {
       display: inline-block;
       padding: 0;
-      margin-right: -4px;
+      margin-right: -5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     ul > li > a {
@@ -74,12 +78,8 @@ $nav-height: rem(105);
       fill: color(white);
     }
 
-    body.company, body.contact &, body.case-studies & {
+    body.company &, body.contact &, body.case-studies & {
       fill: color(red);
     }
   }
-}
-
-.navOffset {
-  padding-top: $nav-height * 2;
 }

@@ -11,3 +11,24 @@
 @import "components/navigation";
 @import "components/home";
 @import "components/contact";
+
+
+.navOffset {
+  padding-top: $nav-height * 2;
+}
+
+.panel {
+  padding: rem(60) 0;
+
+  &--gray {
+    background: color(gray--dark);
+
+    h1, p, a {
+      color: color(gray);
+    }
+
+    h2, h3, h4, h5, h6 {
+      color: color(gray--medium);
+    }
+  }
+}

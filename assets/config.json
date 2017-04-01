@@ -12,7 +12,7 @@
     "templates/**/*.php",
     "src/**/*.php"
   ],
-  "publicPath": "/app/themes/franc",
+  "publicPath": "/wp-content/themes/franc",
   "devUrl": "http://localhost:8888",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

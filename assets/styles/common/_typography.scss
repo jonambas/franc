@@ -62,7 +62,7 @@ p {
 }
 
 // Header Sizing
-$headers: (h1: 30, h2: 27, h3: 24, h4: 21, h5: 18, h6: 18);
+$headers: (h1: 48, h2: 30, h3: 27, h4: 21, h5: 18, h6: 18);
 
 @each $header, $size in $headers {
   #{$header} {
@@ -81,14 +81,3 @@ code, pre {
   white-space: nowrap;
   line-height: 1.5em;
 }
-
-@mixin underscore {
-  display: block;
-  content: "";
-  margin-bottom: rem(21);
-  height: rem(3);
-  width: rem(33);
-  background: color(gray--medium);
-}
-
-.underscore:after { @include underscore; }

@@ -145,3 +145,15 @@ $box-map: (
     vertical-align: middle;
   }
 }
+
+// Type Helpers
+@mixin underscore {
+  display: block;
+  content: "";
+  margin-bottom: rem(21);
+  height: rem(3);
+  width: rem(33);
+  background: color(gray--medium);
+}
+
+.underscore:after { @include underscore; }
