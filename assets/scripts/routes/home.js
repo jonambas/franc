@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Player from '@vimeo/player';
+import fitvids from 'fitvids';
 
 export default {
   init() {
@@ -15,6 +16,7 @@ const video = {
     this.bindEvents();
 
     this._sizeVideo();
+    fitvids('.home__brandVideo');
   },
 
   cacheDom() {

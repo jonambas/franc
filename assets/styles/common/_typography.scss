@@ -2,18 +2,19 @@
 
 html {
   color: color(gray--dark);
-  font-size: $baseline + 0px;
 }
 
 body {
   font:{
-    size: rem(18);
     family: $roboto;
     weight: 400;
   }
   line-height: 2em;
 }
 
+html, body {
+  font-size: 16px;
+}
 
 ::selection {
   color: #111;

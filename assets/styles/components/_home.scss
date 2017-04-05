@@ -42,6 +42,8 @@
     font-size: rem(33);
     line-height: rem(39);
 
+    box-shadow: 0 0 80px 10px rgba(#000, 0.3);
+
     & > p {
       margin: 0;
       color: color(white);
@@ -62,32 +64,37 @@
     position: absolute;
     left: 100%;
     top: 0;
+    margin-left: -8px;
+    z-index: -1;
   }
 
   &__playLink {
     position: relative;
     display: block;
-    padding: rem(18);
+    padding: rem(18) rem(18) rem(18) rem(26);
 
     background: color(red);
     color: color(white);
 
-    &:after {
-      position: absolute;
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background: linear-gradient(to left, rgba(#000, 0) 66%, rgba(#000, 0.33));
-      pointer-events: none;
-    }
+    transition: 0.2s cubic-bezier(0.1, 0.1, 0.1,1);
+
+    // &:after {
+    //   position: absolute;
+    //   content: "";
+    //   display: block;
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   right: 0;
+    //   left: 0;
+    //   background: linear-gradient(to left, rgba(#000, 0) 66%, rgba(#000, 0.33));
+    //   pointer-events: none;
+    // }
 
     &:hover, &:active, &:focus {
+      transform: translate(4px, 0);
       .home__playSvg {
-        
+        fill: rgba(color(white), 1);
       }
     }
   }
@@ -95,9 +102,10 @@
   &__playSvg {
     width: rem(70);
     height: rem(70);
-    fill: none;
+    fill: rgba(color(white), 0);
     stroke: color(white);
     stroke-width: 2;
+    transition: 0.15s;
   }
 
   // Brand Video
@@ -108,7 +116,7 @@
 
     width: 100vw;
     height: 100vh;
-    background: rgba(color(gray--dark), 0.9);
+    background: rgba(20,20,20, 0.9);
     z-index: 1;
 
     opacity: 0;
@@ -126,6 +134,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 70%;
+    max-height: 100vh;
+    max-width: break(xxl);
   }
 
   &__closeLink {

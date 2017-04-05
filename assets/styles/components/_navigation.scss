@@ -39,21 +39,27 @@ $nav-height: rem(105);
       font-size: rem(18);
       text-align: center;
       white-space: nowrap;
+      text-decoration: none;
+
+      top: -8px;
+      transition: 0.2s cubic-bezier(0.1, 0.1, 0.1,1);
+      box-shadow: 0 0 80px 10px rgba(#000, 0.3);
 
       &:hover, &:active, &:focus {
         cursor: pointer;
-        text-decoration: underline;
+        transform: translate(0, 8px);
+        border-radius: 1px;
       }
 
       &:after {
-        position: absolute;
-        content: "";
-        display: block;
+        //position: absolute;
+        // content: "";
+        // display: block;
         position: absolute;
         top: 0;
         bottom: 0;
-        right: 0;
-        left: 0;
+        right: 100%;
+        left: -120px;
         background: linear-gradient(to right, rgba(#000, 0) 75%, rgba(#000, 0.25));
         pointer-events: none;
       }
