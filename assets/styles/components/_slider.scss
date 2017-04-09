@@ -1,0 +1,107 @@
+.leadershipSlider {
+  height: rem(500);
+  margin-bottom: rem(90);
+
+  background: color(brown);
+}
+
+.caseStudies {
+  position: relative;
+  padding: rem(140) 0 rem(60);
+  box-sizing: border-box;
+  height: 100vh;
+
+  &__container {
+    position: relative;
+    height: 100%;
+    background: color(white);
+  }
+
+  h1 {
+    font-size: rem(66);
+  }
+
+  h4 {
+    color: color(gray--medium)
+  }
+}
+
+.leadershipSlider, .caseStudies {
+  position: relative;
+
+  &__controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+  }
+
+  &__prev, &__next {
+    position: absolute;
+    background: color(gray--medium);
+    padding: rem(30);
+    opacity: 1;
+
+    &.is-disabled {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: center;
+      content: "";
+      width: rem(18);
+      height: rem(18);
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+    }
+  }
+
+  &__next {
+    right: 0;
+
+    &:before { transform: translate(-65%, -50%) rotate(-45deg); }
+  }
+
+  &__prev {
+    left: 0;
+    &:before { transform: translate(-35%, -50%) rotate(135deg); }
+  }
+
+  &__slides {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &__slide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 rem(90);
+
+    opacity: 0;
+    transition: 0.15s;
+
+    &.is-visible {
+      opacity: 1;
+    }
+
+    .container, .flex {
+      height: 100%;
+    }
+
+    h2 {
+      margin: 0;
+      color: color(red);
+    }
+  }
+}

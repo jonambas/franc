@@ -14,9 +14,9 @@
 
           <div class="flex center-xs text--left">
 
-            <div class="col-xs-2">
+            <div class="col-xs-6 col-lg-2">
               <h6 class="contact__header">Links</h6>
-              <ul class="contact__list">
+              <ul class="contact__list marginBottom--md">
                 <li class="contact__listItem"><a href="#">Facebook</a></li>
                 <li class="contact__listItem"><a href="#">Instagram</a></li>
                 <li class="contact__listItem"><a href="#">Twitter</a></li>
@@ -24,7 +24,7 @@
               </ul>
             </div>
 
-            <div class="col-xs-2">
+            <div class="col-xs-6 col-lg-2">
               <h6 class="contact__header">Email</h6>
 
               <ul class="contact__list marginBottom--md">
@@ -37,12 +37,12 @@
               </ul>
             </div>
 
-            <div class="col-xs-3">
+            <div class="col-xs-6 col-lg-3">
               <h6 class="contact__header">Address</h6>
               <address class="contact__address">6 Porter Drive<br>Annapolis, Marlyand<br>21401</address>
             </div>
 
-            <div class="col-xs-3">
+            <div class="col-xs-6 col-lg-3">
               <h6 class="contact__header">Subscribe to our newsletter</h6>
               <form>
                 <input type="text" />

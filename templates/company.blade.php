@@ -13,16 +13,16 @@
       <div class="container">
         <div class="flex">
 
-          <div class="col-xs-3">
+          <div class="col-xs-12 col-lg-3">
             <h3 class="line--xl underscore">Strategy &amp; Design</h2>
-            <h1>Approach</h1>
+            <h1 class="marginBottom--xl">Approach</h1>
           </div>
 
-          <div class="col-xs-5">
+          <div class="col-xs-12 col-lg-5">
             <p>Franc is a design driven animation partner. We believe strongly that animation is the most powerful and versatile tool in the communication arsenal. It can convey information and emotion in ways impossible in any other medium. By a process of simplifying, clarifying, and energizing, we are able to strip content down to its most comprehensible and visually arresting form. With versatility and consistency as the foundation for all designs, content can be reused and evolved across channels. Each element of an animation can be disassembled, reconfigured, reused, and repurposed as necessary.</p>
           </div>
 
-          <div class="col-xs-3">
+          <div class="col-xs-12 col-lg-3">
             <img src="" />
           </div>
 
@@ -32,11 +32,11 @@
 
     <div class="panel">
       <div class="container">
-        <h1 class="line--xxl underscore marginBottom--xxl">Capabilities</h1>
+        <h1 class="line--xxl underscore marginBottom--xl">Capabilities</h1>
 
         <div class="flex">
 
-          <div class="col-xs-5 marginBottom--xxl">
+          <div class="col-xs-12 col-lg-5 marginBottom--xl">
             <div class="flex">
               <div class="col-xs-3">img</div>
               <div class="col-xs-9">
@@ -46,7 +46,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 col-xs-offset-1">
+          <div class="col-xs-12 col-lg-5 col-lg-offset-1 marginBottom--xl">
             <div class="flex">
               <div class="col-xs-3">img</div>
               <div class="col-xs-9">
@@ -56,7 +56,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 marginBottom--xxl">
+          <div class="col-xs-12 col-lg-5 marginBottom--xl">
             <div class="flex">
               <div class="col-xs-3">img</div>
               <div class="col-xs-9">
@@ -66,7 +66,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 col-xs-offset-1">
+          <div class="col-xs-12 col-lg-5 col-lg-offset-1 marginBottom--xl">
             <div class="flex">
               <div class="col-xs-3">img</div>
               <div class="col-xs-9">
@@ -76,7 +76,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 marginBottom--xxl">
+          <div class="col-xs-12 col-lg-5 marginBottom--xl">
             <div class="flex">
               <div class="col-xs-3">img</div>
               <div class="col-xs-9">
@@ -86,7 +86,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 col-xs-offset-1">
+          <div class="col-xs-12 col-lg-5 col-lg-offset-1 marginBottom--xl">
             <div class="flex">
               <div class="col-xs-3">img</div>
               <div class="col-xs-9">
@@ -102,9 +102,50 @@
 
     <div class="container">
       <h1 class="line--xxl underscore">Leadership</h1>
-    <div>
+    </div>
 
+    <div class="leadershipSlider">
+      <div class="leadershipSlider__slides">
 
+        {{--  Slide 1 --}}
+        <div class="leadershipSlider__slide">
+          <div class="container">
+            <div class="flex middle-xs">
+              <div class="col-xs-12 col-md-5">
+                img
+              </div>
+              <div class="col-xs-12 col-md-7 col-lg-5">
+                <h2>Asher Warren</h2>
+                <h5>Creative Director</h5>
+                <p>We believe that animation is one of the most powerful tools in the communication arsenal. It can convey information and emotion in ways impossible in any other medium. By a process of simplifying, clarifying, and energizing, we are able to strip content down to its most comprehensible and visually arresting form.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- Slide 2 --}}
+
+          <div class="leadershipSlider__slide">
+            <div class="container">
+              <div class="flex middle-xs">
+                <div class="col-xs-12 col-md-5">
+                  img
+                </div>
+                <div class="col-xs-12 col-md-7 col-lg-5">
+                  <h2>Mike Cheeyou</h2>
+                  <h5>Animator</h5>
+                  <p>We believe that animation is one of the most powerful tools in the communication arsenal. It can convey information and emotion in ways impossible in any other medium. By a process of simplifying, clarifying, and energizing, we are able to strip content down to its most comprehensible and visually arresting form.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <div class="leadershipSlider__controls">
+        <a class="leadershipSlider__next" href="" title="Next"></a>
+        <a class="leadershipSlider__prev" href="" title="Previous"></a>
+      </div>
+    </div>
 
 
   @endwhile

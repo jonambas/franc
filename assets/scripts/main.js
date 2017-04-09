@@ -5,6 +5,8 @@ import 'jquery';
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
+import caseStudies from './routes/case-studies';
+import company from './routes/company';
 import aboutUs from './routes/about';
 
 /**
@@ -16,6 +18,8 @@ const routes = new Router({
   common,
   /** Home page */
   home,
+  company,
+  caseStudies,
   /** About Us page, note the change from about-us to aboutUs. */
   aboutUs,
 });

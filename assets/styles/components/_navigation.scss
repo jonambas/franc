@@ -12,10 +12,16 @@ $nav-height: rem(105);
 
   &__bar {
     float: right;
+    display: none; // TODO style this
+
+    @media only screen and (min-width: break(md)) {
+      display: block;
+    }
 
     ul {
       list-style-type: none;
       margin: 0;
+      padding: 0;
     }
 
     ul > li {
@@ -43,7 +49,6 @@ $nav-height: rem(105);
 
       top: -8px;
       transition: 0.2s cubic-bezier(0.1, 0.1, 0.1,1);
-      box-shadow: 0 0 80px 10px rgba(#000, 0.3);
 
       &:hover, &:active, &:focus {
         cursor: pointer;
@@ -52,14 +57,14 @@ $nav-height: rem(105);
       }
 
       &:after {
-        //position: absolute;
-        // content: "";
-        // display: block;
+        position: absolute;
+        content: "";
+        display: block;
         position: absolute;
         top: 0;
         bottom: 0;
-        right: 100%;
-        left: -120px;
+        right: 0;
+        left: 0;
         background: linear-gradient(to right, rgba(#000, 0) 75%, rgba(#000, 0.25));
         pointer-events: none;
       }
