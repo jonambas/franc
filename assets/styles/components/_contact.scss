@@ -18,7 +18,7 @@
   &__listItem {
     a {
       line-height: rem(51);
-      font-weight: 500;
+      font-weight: 300;
       color: color(gray--dark)
     }
   }
@@ -28,5 +28,97 @@
     font-weight: 500;
     color: color(gray--dark);
     font-style: normal;
+  }
+
+  // Form
+  &__formWrapper {
+    position: relative;
+  }
+
+  &__fieldset, &__submit {
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+  &__fieldset {
+    position: relative;
+
+    input {
+      display: inline-block;
+      vertical-align: top;
+      border: none;
+      padding: rem(36) rem(24) rem(24);
+      min-width: rem(230);
+
+      @media screen and (min-width: break(lg)) {
+        padding: rem(36) rem(36) rem(24);
+      }
+
+      &:hover, &:active, &:focus {
+        outline: none;
+      }
+
+      &:active, &:focus {
+        & + .contact__label {
+          font-size: rem(14);
+          transform: translate(0, 0);
+        }
+      }
+    }
+
+    #mc_embed_signup & div.mce_inline_error {
+      position: absolute;
+      background-color: transparent;
+
+      color: color(red);
+      font-weight: 500;
+      font-size: rem(15);
+    }
+  }
+
+  &__label {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: rem(24);
+    transform: translate(0, -50%);
+
+    font-weight: 500;
+    font-size: rem(18);
+    color: color(gray--medium);
+    transform: translate(0, 55%);
+    transition: 0.15s;
+    pointer-events: none;
+
+    @media screen and (min-width: break(lg)) {
+      left: rem(36);
+    }
+
+    &.is-active {
+      font-size: rem(14);
+      transform: translate(0, 0);
+    }
+  }
+
+  &__submit {
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+
+    font-weight: 500;
+    padding: rem(30) rem(21);
+    color: color(white);
+    background: color(gray--medium);
+    outline: none;
+    transition: 0.15s;
+
+    &:hover, &:active, &:focus {
+      cursor: pointer;
+      background-color: color(red);
+    }
+
+    @media screen and (min-width: break(lg)) {
+      padding: rem(30) rem(42);
+    }
   }
 }

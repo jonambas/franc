@@ -8,19 +8,21 @@ import home from './routes/home';
 import caseStudies from './routes/case-studies';
 import company from './routes/company';
 import aboutUs from './routes/about';
+import contact from './routes/contact';
 
 /**
  * Populate Router instance with DOM routes
  * @type {Router} routes - An instance of our router
  */
 const routes = new Router({
-  /** All pages */
+  
   common,
-  /** Home page */
+
   home,
   company,
   caseStudies,
-  /** About Us page, note the change from about-us to aboutUs. */
+  contact,
+
   aboutUs,
 });
 

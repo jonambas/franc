@@ -14,17 +14,25 @@
 
           <div class="flex center-xs text--left">
 
-            <div class="col-xs-6 col-lg-2">
+            <div class="col-xs-6 col-md-2 col-md-offset-1">
               <h6 class="contact__header">Links</h6>
               <ul class="contact__list marginBottom--md">
-                <li class="contact__listItem"><a href="#">Facebook</a></li>
-                <li class="contact__listItem"><a href="#">Instagram</a></li>
-                <li class="contact__listItem"><a href="#">Twitter</a></li>
-                <li class="contact__listItem"><a href="#">Vimeo</a></li>
+                <li class="contact__listItem">
+                  <a href="https://www.facebook.com/franchq/" title="Facebook" target="_blank">Facebook</a>
+                </li>
+                <li class="contact__listItem">
+                  <a href="https://www.instagram.com/franc_hq/" title="Instagram" target="_blank">Instagram</a>
+                </li>
+                <li class="contact__listItem">
+                  <a href="https://twitter.com/franc_hq" title="Twitter" target="_blank">Twitter</a>
+                </li>
+                <li class="contact__listItem">
+                  <a href="https://vimeo.com/franchq" title="Vimeo" target="_blank">Vimeo</a>
+                </li>
               </ul>
             </div>
 
-            <div class="col-xs-6 col-lg-2">
+            <div class="col-xs-6 col-md-2">
               <h6 class="contact__header">Email</h6>
 
               <ul class="contact__list marginBottom--md">
@@ -37,16 +45,11 @@
               </ul>
             </div>
 
-            <div class="col-xs-6 col-lg-3">
-              <h6 class="contact__header">Address</h6>
-              <address class="contact__address">6 Porter Drive<br>Annapolis, Marlyand<br>21401</address>
-            </div>
 
-            <div class="col-xs-6 col-lg-3">
+
+            <div class="col-xs-12 col-md-offset-1 col-md-6 col-lg-offset-1 col-lg-6">
               <h6 class="contact__header">Subscribe to our newsletter</h6>
-              <form>
-                <input type="text" />
-              </form>
+              @include('partials.mailchimp')
             </div>
           </div>
 
