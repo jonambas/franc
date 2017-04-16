@@ -147,6 +147,7 @@
       </div>
     </div>
 
-
+    @include('partials.footer')
+    
   @endwhile
 @endsection

@@ -9,6 +9,7 @@
 @import "layouts/view";
 
 @import "components/navigation";
+@import "components/footer";
 @import "components/home";
 @import "components/contact";
 @import "components/slider";
@@ -31,5 +32,41 @@
     h2, h3, h4, h5, h6 {
       color: color(gray--medium);
     }
+  }
+}
+
+.navigation__wrapper .brand {
+  float: left;
+
+  &__link {
+    display: block;
+  }
+
+  &__logo {
+    display: block;
+    padding: $nav-height*.66 0 0;
+    height: $nav-height*.33;
+    width: auto;
+
+    body.home &, body.company footer & {
+      fill: color(white);
+    }
+
+    body.company &, body.contact &, body.case-studies & {
+      fill: color(red);
+    }
+  }
+}
+
+.footer .brand {
+  &__link {
+    display: block;
+  }
+
+  &__logo {
+    display: block;
+    height: $nav-height*.33;
+    width: auto;
+    fill: color(white);
   }
 }

@@ -71,26 +71,3 @@ $nav-height: rem(105);
     }
   }
 }
-
-.brand {
-  float: left;
-
-  &__link {
-    display: block;
-  }
-
-  &__logo {
-    display: block;
-    padding: $nav-height*.66 0 0;
-    height: $nav-height*.33;
-    width: auto;
-
-    body.home & {
-      fill: color(white);
-    }
-
-    body.company &, body.contact &, body.case-studies & {
-      fill: color(red);
-    }
-  }
-}
