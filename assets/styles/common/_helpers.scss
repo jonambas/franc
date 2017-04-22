@@ -151,9 +151,16 @@ $box-map: (
   display: block;
   content: "";
   margin-bottom: rem(21);
-  height: rem(3);
-  width: rem(33);
+  margin-left: rem(3);
+  height: 2px;
+  width: rem(39);
   background: color(gray--medium);
 }
 
 .underscore:after { @include underscore; }
+
+
+
+.text-strong {
+  font-weight: 600;
+}

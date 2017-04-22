@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="flex">
-      <div class="col-xs-3">
+      <div class="col-xs-12 col-lg-3 marginBottom--xl">
         <div class="brand">
           <a class="brand__link" href="{{ home_url('/') }}" title="{{ get_bloginfo('name', 'display') }}">
             @include('partials.svg-logo')
@@ -10,12 +10,12 @@
         </div>
       </div>
 
-      <div class="col-xs-3">
-        <p><strong>Franc</strong> is an animation and design studio based in Annapolis Maryland.</p>
+      <div class="col-xs-12 col-lg-3 marginBottom--xl">
+        <p class="footer__desc"><strong>Franc</strong> is an animation and design studio based in Annapolis Maryland.</p>
       </div>
 
-      <div class="col-xs-2 col-xs-offset-1">
-        <h6 class="underscore">Follow Us</h6>
+      <div class="col-xs-6 col-lg-2 col-lg-offset-1">
+        <h6 class="underscore"><strong>Follow Us</strong></h6>
         <ul class="footer__list">
           <li class="footer__listItem">
             <a href="https://www.facebook.com/franchq/" title="Facebook" target="_blank">Facebook</a>
@@ -32,8 +32,8 @@
         </ul>
       </div>
 
-      <div class="col-xs-3 text--right">
-        <p class="marginBottom--none">&copy; 2017 Franc LLC</p>
+      <div class="col-xs-6 col-lg-3 text--right">
+        <p class="marginBottom--none">&copy; 2017 <strong>Franc LLC</strong></p>
         <p>All Rights Reserved</p>
       </div>
     </div>

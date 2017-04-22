@@ -6,8 +6,8 @@
     color: color(white);
   }
 
-  p {
-    font-size: rem(16);
+  h6 {
+    line-height: rem(51);
   }
 
   h6:after {
@@ -33,6 +33,16 @@
       font-weight: 300;
       font-size: rem(16);
       color: color(white)
+    }
+  }
+
+  &__desc {
+    padding-right: rem(0);
+    font-size: rem(21);
+    line-height: rem(30);
+
+    @media screen and (min-width: break(lg)) {
+      padding-right: rem(90);
     }
   }
 }

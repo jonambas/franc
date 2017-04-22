@@ -33,6 +33,23 @@
       color: color(gray--medium);
     }
   }
+
+  &--accent {
+    position: relative;
+    margin-bottom: rem(69);
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: 100%;
+      content: "";
+      height: rem(69);
+      width: 100%;
+      background: color(red);
+      z-index: -1;
+
+    }
+  }
 }
 
 .navigation__wrapper .brand {

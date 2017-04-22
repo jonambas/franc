@@ -1,8 +1,16 @@
 .leadershipSlider {
-  height: rem(500);
+  height: rem(580);
   margin-bottom: rem(90);
 
   background: color(brown);
+
+  &__name {
+    color: color(red);
+  }
+
+  &__title {
+    transform: translate(0,-45%);
+  }
 }
 
 .caseStudies {
@@ -24,6 +32,37 @@
   h4 {
     color: color(gray--medium)
   }
+
+  &__titleBox {
+    display: block;
+    padding: rem(51);
+    background: color(gray);
+
+    &:hover {
+      text-decoration: none;
+      background: color(brown);
+    }
+
+    h1 {
+      color: color(red);
+    }
+
+    h3 {
+      color: color(gray--dark);
+
+      &:after {
+        background: color(gray--dark);
+      }
+    }
+  }
+
+  &__more {
+    padding: rem(51);
+
+    h4 {
+      color: color(gray--medium);
+    }
+  }
 }
 
 .leadershipSlider, .caseStudies {
@@ -38,13 +77,18 @@
 
   &__prev, &__next {
     position: absolute;
-    background: color(gray--medium);
+    transform: translate(0,-50%);
+    background: color(gray--dark);
     padding: rem(30);
     opacity: 1;
 
     &.is-disabled {
       pointer-events: none;
       opacity: 0;
+    }
+
+    &:hover {
+      background: color(red);
     }
 
     &:before {
@@ -90,18 +134,15 @@
 
     opacity: 0;
     transition: 0.15s;
+    pointer-events: none;
 
     &.is-visible {
       opacity: 1;
+      pointer-events: auto;
     }
 
     .container, .flex {
       height: 100%;
-    }
-
-    h2 {
-      margin: 0;
-      color: color(red);
     }
   }
 }

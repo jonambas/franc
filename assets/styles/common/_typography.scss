@@ -53,8 +53,10 @@ p {
 
   font:{
     family: $roboto;
-    weight: 600;
+    weight: 300;
   }
+
+  line-height: 1em;
 
   *+& {
     // Adds a little top padding to headers, unless it is first child
@@ -64,10 +66,14 @@ p {
   &::selection{
     //color: #000;
   }
+
+  strong {
+    font-weight: 600;
+  }
 }
 
 // Header Sizing
-$headers: (h1: 48, h2: 30, h3: 27, h4: 21, h5: 18, h6: 18);
+$headers: (h1: 57, h2: 36, h3: 27, h4: 21, h5: 18, h6: 18);
 
 @each $header, $size in $headers {
   #{$header} {
