@@ -15,15 +15,13 @@ import contact from './routes/contact';
  * @type {Router} routes - An instance of our router
  */
 const routes = new Router({
-  
-  common,
 
+  common,
   home,
   company,
-  caseStudies,
   contact,
-
   aboutUs,
+  pageTemplateCaseStudyListBlade: caseStudies, // The loop overrides the body class outputed
 });
 
 /** Load Events */
