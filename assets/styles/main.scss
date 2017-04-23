@@ -13,6 +13,7 @@
 @import "components/home";
 @import "components/contact";
 @import "components/slider";
+@import "components/casestudy";
 
 
 .navOffset {
@@ -69,7 +70,9 @@
       fill: color(white);
     }
 
-    body.company &, body.contact &, body.case-studies & {
+    body.company &, body.contact &,
+    body.page-template-case-study-list-blade &,
+    body.single-case_studies & {
       fill: color(red);
     }
   }

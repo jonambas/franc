@@ -6,6 +6,7 @@ import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
 import caseStudies from './routes/case-studies';
+import caseStudy from './routes/case-study';
 import company from './routes/company';
 import aboutUs from './routes/about';
 import contact from './routes/contact';
@@ -21,7 +22,9 @@ const routes = new Router({
   company,
   contact,
   aboutUs,
+
   pageTemplateCaseStudyListBlade: caseStudies, // The loop overrides the body class outputed
+  singleCaseStudies: caseStudy,
 });
 
 /** Load Events */

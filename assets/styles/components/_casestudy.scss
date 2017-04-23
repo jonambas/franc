@@ -1,0 +1,37 @@
+.caseStudy {
+  &__hero {
+
+  }
+
+  &__image {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__video {
+    margin-bottom: rem(33);
+  }
+
+  &__quote {
+    margin: rem(36) 0;
+    padding: rem(50);
+    background: color(red);
+
+    h1, p {
+      color: color(white);
+    }
+
+    h1 {
+      &:after {
+        margin-top: rem(33);
+        margin-bottom: rem(33);
+        background: color(white);
+      }
+    }
+
+    p {
+      line-height: 1.5em;
+    }
+  }
+}
