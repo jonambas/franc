@@ -28,6 +28,7 @@ $nav-height: rem(105);
       display: inline-block;
       padding: 0;
       margin-right: -5px;
+      margin-left: rem(3);
 
       &:last-child {
         margin-right: 0;
@@ -54,19 +55,6 @@ $nav-height: rem(105);
         cursor: pointer;
         transform: translate(0, 8px);
         border-radius: 1px;
-      }
-
-      &:after {
-        position: absolute;
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background: linear-gradient(to right, rgba(#000, 0) 75%, rgba(#000, 0.25));
-        pointer-events: none;
       }
     }
   }

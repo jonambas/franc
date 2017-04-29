@@ -32,10 +32,10 @@ body {
 .container {
   max-width: break(xxl);
   margin: 0 auto;
-  padding: 0 rem(33);
+  padding: 0 rem(30);
 
   @media only screen and (min-width:break(md)) {
-    padding: 0 rem(60);
+    padding: 0 rem(42);
   }
 }
 

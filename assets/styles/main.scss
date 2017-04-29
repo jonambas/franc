@@ -62,9 +62,14 @@
 
   &__logo {
     display: block;
-    padding: $nav-height*.66 0 0;
-    height: $nav-height*.33;
+    padding: $nav-height*.33 0 0;
+    height: $nav-height*.5;
     width: auto;
+
+    @media screen and (min-width: break(md)) {
+      padding: $nav-height*.33 0 0;
+      height: $nav-height*.66;
+    }
 
     body.home &, body.company footer & {
       fill: color(white);
