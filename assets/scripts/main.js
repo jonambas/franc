@@ -19,10 +19,10 @@ const routes = new Router({
 
   common,
   home,
-  company,
   contact,
   aboutUs,
 
+  pageTemplateCompanyBlade: company,
   pageTemplateCaseStudyListBlade: caseStudies, // The loop overrides the body class outputed
   singleCaseStudies: caseStudy,
 });
