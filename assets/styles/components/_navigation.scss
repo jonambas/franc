@@ -27,12 +27,8 @@ $nav-height: rem(105);
     ul > li {
       display: inline-block;
       padding: 0;
-      margin-right: -5px;
-      margin-left: rem(3);
-
-      &:last-child {
-        margin-right: 0;
-      }
+      margin-right: -2px;
+      margin-left: 1px;
     }
 
     ul > li > a {
