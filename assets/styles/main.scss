@@ -17,7 +17,7 @@
 
 
 .navOffset {
-  padding-top: $nav-height * 2;
+  padding-top: rem(140);
 }
 
 .panel {
@@ -76,6 +76,7 @@
     }
 
     body.company &, body.contact &,
+    body.page-template-company-blade &,
     body.page-template-case-study-list-blade &,
     body.single-case_studies & {
       fill: color(red);
@@ -93,5 +94,15 @@
     height: $nav-height*.33;
     width: auto;
     fill: color(white);
+  }
+}
+
+.capability {
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    padding: 0 rem(42);
   }
 }

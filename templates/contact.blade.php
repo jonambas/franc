@@ -41,7 +41,7 @@
 
               <h6 class="contact__header">Phone</h6>
               <ul class="contact__list">
-                <li class="contact__listItem"><a href="#">443 995 0117</a></li>
+                <li class="contact__listItem"><a href="#">443 274 7987</a></li>
               </ul>
             </div>
 

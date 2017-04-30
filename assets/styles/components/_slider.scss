@@ -2,7 +2,7 @@
   height: rem(580);
   margin-bottom: rem(90);
 
-  background: color(brown);
+  background: color(white);
 
   &__name {
     color: color(red);
@@ -37,10 +37,23 @@
     display: block;
     padding: rem(51);
     background: color(gray);
+    border: 1px solid transparent;
 
     &:hover {
       text-decoration: none;
-      background: color(brown);
+      background: color(red);
+
+      h1, h3 {
+        color: white;
+      }
+
+      h3:after {
+        background: white;
+      }
+    }
+
+    h1, h3, h3:after {
+      transition: 0.15s;
     }
 
     h1 {

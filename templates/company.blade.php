@@ -38,10 +38,10 @@
           <div class="flex">
 
             @while(have_rows('capabilities')) @php(the_row())
-              <div class="col-xs-12 col-lg-6 marginBottom--xl">
+              <div class="col-xs-12 col-lg-6 marginBottom--xl capability">
                 <div class="flex">
-                  <div class="col-xs-3">img</div>
-                  <div class="col-xs-9">
+                  <div class="col-xs-3"><img class="capability__image" src="{{get_sub_field('image')}}" alt=""></div>
+                  <div class="col-xs-9 capability__content">
                     <h2>{{get_sub_field('title')}}</h2>
                     <p>{{get_sub_field('description')}}</p>
                   </div>

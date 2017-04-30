@@ -84,25 +84,12 @@
   &__playLink {
     position: relative;
     display: block;
-    padding: rem(24) rem(24) rem(18) rem(24);
+    padding: rem(24);
 
     background: color(red);
     color: color(white);
 
     transition: 0.2s cubic-bezier(0.1, 0.1, 0.1,1);
-
-    // &:after {
-    //   position: absolute;
-    //   content: "";
-    //   display: block;
-    //   position: absolute;
-    //   top: 0;
-    //   bottom: 0;
-    //   right: 0;
-    //   left: 0;
-    //   background: linear-gradient(to left, rgba(#000, 0) 66%, rgba(#000, 0.33));
-    //   pointer-events: none;
-    // }
 
     &:hover, &:active, &:focus {
       // transform: translate(4px, 0);
@@ -113,6 +100,7 @@
   }
 
   &__playSvg {
+    display: block;
     width: rem(70);
     height: rem(70);
     fill: rgba(#fff, 0);
@@ -154,7 +142,40 @@
 
   &__closeLink {
     position: absolute;
-    right: 0;
-    bottom: 100%;
+    right: rem(42);
+    top: rem(42);
+
+    &:hover {
+      .home__closeSvg {
+        path {
+          fill: rgba(color(gray--dark), 1);
+        }
+
+        circle {
+          fill: rgba(#fff, 1);
+
+        }
+      }
+    }
+  }
+
+  &__closeSvg {
+    display: block;
+    width: rem(70);
+    height: rem(70);
+
+    path {
+      fill: rgba(#fff, 1);
+    }
+
+    circle {
+      stroke: color(white);
+      stroke-width: 2;
+      fill: rgba(#fff, 0);
+    }
+
+    * {
+      transition: 0.15s;
+    }
   }
 }
