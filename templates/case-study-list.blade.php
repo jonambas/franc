@@ -24,7 +24,7 @@
                 <div class="flex middle-xs">
                   <div class="col-xs-12 col-md-10 col-lg-7">
                     <a href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__titleBox">
-                      <h3 class="line--xl underscore"><strong>{{ the_field( 'client' ) }}</strong></h3>
+                      <h3 class="line--xl underscore"><strong>{{ the_field( 'subtitle' ) }}</strong></h3>
                       <h1 class="marginBottom--xl">{{ get_the_title() }}</h1>
                     </a>
                   </div>

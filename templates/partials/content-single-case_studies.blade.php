@@ -4,7 +4,7 @@
 
   <div class="caseStudy__hero">
     <div class="container">
-      {{ the_field( 'client' ) }}
+      {{ the_field( 'subtitle' ) }}
       {{ get_the_title() }}
     </div>
   </div>
@@ -35,6 +35,31 @@
               <div class="container">
                 <h1 class="underscore">{{ get_sub_field('quote') }}</h1>
                 <p>{{{ the_sub_field('quote_from') }}}</p>
+              </div>
+            </div>
+          @endif
+
+          @if(get_sub_field('type') === 'Description')
+            <div class="panel panel--gray caseStudy__description">
+              <div class="container">
+                <div class="flex">
+                  <div class="col-xs-12 col-lg-3 marginBottom--lg">
+                    <h4 class="line--xl marginBottom--md underscore"><strong>Client</strong></h4>
+                    <h1 class="text-thinHeader">{{ get_the_title() }}</h1>
+                  </div>
+                  <div class="col-xs-12 col-lg-5 marginBottom--lg">
+                    <h4 class="line--xl marginBottom--md underscore"><strong>Challenge and Solution</strong></h4>
+                    <div>
+                      {{ the_sub_field('challenge') }}
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-3 col-lg-offset-1">
+                    <h4 class="line--xl marginBottom--md underscore"><strong>Deliverables</strong></h4>
+                    <div class="caseStudy__description__deliverables">
+                      {{ the_sub_field('deliverables') }}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           @endif
