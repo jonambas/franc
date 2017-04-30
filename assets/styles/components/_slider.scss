@@ -69,6 +69,23 @@
     }
   }
 
+  &__bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: auto;
+    max-width: 120%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: break(md)) {
+      left: auto;
+      right: 0;
+      max-width: 75%;
+      transform: translate(0, -50%);
+    }
+  }
+
   &__more {
     padding: rem(51);
 
@@ -148,6 +165,8 @@
     opacity: 0;
     transition: 0.15s;
     pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
 
     &.is-visible {
       opacity: 1;

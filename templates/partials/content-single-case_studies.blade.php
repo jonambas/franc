@@ -3,9 +3,23 @@
 <div class="caseStudy">
 
   <div class="caseStudy__hero">
+    @if (has_post_thumbnail( $post->ID ))
+      @php
+        $thumb_url_array = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail-size', true);
+        $thumb_url = $thumb_url_array[0];
+      @endphp
+      <img class="caseStudy__hero__bg" src="{{$thumb_url}}" alt="">
+    @endif
+
     <div class="container">
-      {{ the_field( 'subtitle' ) }}
-      {{ get_the_title() }}
+      <div class="flex middle-xs">
+        <div class="col-xs-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="caseStudy__titleBox">
+            <h3 class="line--xl marginBottom--md underscore"><strong>{{ the_field( 'subtitle' )}}</strong></h3>
+            <h1 class="text-thinHeader">{{ get_the_title() }}</h1>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

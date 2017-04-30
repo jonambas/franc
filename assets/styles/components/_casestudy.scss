@@ -1,6 +1,47 @@
 .caseStudy {
   &__hero {
+    position: relative;
+    background: color(white);
+    height: 50vh;
+    margin-bottom: rem(36);
+    z-index: 1;
+    overflow: hidden;
 
+    h1 {
+      color: color(red);
+      font-size: rem(60);
+    }
+
+    .container, .flex {
+      height: 100%;
+    }
+
+    &__bg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: auto;
+      max-width: 120%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+
+      @media screen and (min-width: break(md)) {
+        left: auto;
+        right: 0;
+        max-width: 66%;
+        transform: translate(0, -50%);
+      }
+
+      @media screen and (min-width: break(xl)) {
+        max-width: 60%;
+      }
+    }
+  }
+
+  &__titleBox {
+    padding: rem(51);
+    background: color(gray);
+    border: 1px solid transparent;
   }
 
   &__image {
@@ -35,14 +76,12 @@
     }
   }
 
-  &__description {
-    &__deliverables {
-      .panel--gray & {
-        h2, h3, h4, h5, h6 {
-          font-weight: 500;
-          color: color(white);
-          margin-bottom: rem(30);
-        }
+  &__description__deliverables  {
+    .panel--gray & {
+      h2, h3, h4, h5, h6 {
+        font-weight: 500;
+        color: color(white);
+        margin-bottom: rem(30);
       }
     }
   }

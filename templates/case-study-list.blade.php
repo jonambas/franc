@@ -21,8 +21,16 @@
           @while($caseStudies->have_posts()) @php($caseStudies->the_post())
             <div class="caseStudies__slide">
 
+              @if (has_post_thumbnail( $post->ID ))
+                @php
+                  $thumb_url_array = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail-size', true);
+                  $thumb_url = $thumb_url_array[0];
+                @endphp
+                <img class="caseStudies__bg" src="{{$thumb_url}}" alt="">
+              @endif
+
                 <div class="flex middle-xs">
-                  <div class="col-xs-12 col-md-10 col-lg-7">
+                  <div class="col-xs-12 col-md-8 col-lg-7">
                     <a href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__titleBox">
                       <h3 class="line--xl underscore"><strong>{{ the_field( 'subtitle' ) }}</strong></h3>
                       <h1 class="marginBottom--xl">{{ get_the_title() }}</h1>
