@@ -2,56 +2,154 @@ $nav-height: rem(105);
 
 .navigation {
   &__wrapper {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 0;
-    right: 0;
-    height: $nav-height;
-    z-index: 1;
+    z-index: 2;
+
+    body.home & {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &__hamburgerWrapper {
+    position: relative;
+    display: block;
+    padding: rem(66) rem(33) rem(54);
+    background: color(red);
+
+
+    &:hover .navigation__hamburger {
+      &:after { transform: translate(0, -2px); }
+      &:before { transform: translate(0, 2px); }
+    }
+  }
+
+  &__hamburger {
+    display: block;
+    position: relative;
+    height: rem(3);
+    width: rem(54);
+    background: color(white);
+    border-radius: 2px;
+
+    &:after, &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      height: rem(3);
+      width: rem(54);
+      background: color(white);
+      border-radius: 2px;
+      transition: 0.15s;
+    }
+
+    &:after {
+      top: -11px;
+    }
+
+    &:before {
+      top: 11px;
+    }
   }
 
   &__bar {
     float: right;
-    display: none; // TODO style this
+    position: relative;
+  }
 
-    @media only screen and (min-width: break(md)) {
-      display: block;
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: color(red);
+    z-index: 100;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.15s;
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .flex {
+      height: 100%;
     }
 
     ul {
       list-style-type: none;
       margin: 0;
-      padding: 0;
+      text-align: center;
     }
 
-    ul > li {
-      display: inline-block;
-      padding: 0;
-      margin-right: -2px;
-      margin-left: 1px;
-    }
+    ul > li { }
 
     ul > li > a {
-      position: relative;
-      display: block;
-      padding: rem(57) rem(28) rem(18);
-      width: rem(120);
-      background: color(red);
-      color: color(white);
-      font-weight: 400;
-      font-size: rem(18);
-      text-align: center;
-      white-space: nowrap;
-      text-decoration: none;
+      display: inline-block;
+      padding: rem(27);
+      margin: rem(18);
 
-      top: -8px;
-      transition: 0.2s cubic-bezier(0.1, 0.1, 0.1,1);
+      color: color(white);
+      font-size: rem(30);
+      font-weight: 600;
+
+      @media only screen and (min-width: break(md)) {
+        font-size: rem(60);
+        padding: rem(60) rem(60);
+      }
 
       &:hover, &:active, &:focus {
+        background: color(white);
+        color: color(red);
         cursor: pointer;
-        transform: translate(0, 8px);
-        border-radius: 1px;
+        text-decoration: none;
       }
+    }
+  }
+
+  &__closeLink {
+    position: absolute;
+    right: rem(42);
+    top: rem(42);
+
+    &:hover {
+      .navigation__closeSvg {
+        path {
+          fill: rgba(color(red), 1);
+        }
+
+        circle {
+          fill: rgba(#fff, 1);
+
+        }
+      }
+    }
+  }
+
+  &__closeSvg {
+    display: block;
+    width: rem(70);
+    height: rem(70);
+
+    path {
+      fill: rgba(#fff, 1);
+    }
+
+    circle {
+      stroke: color(white);
+      stroke-width: 2;
+      fill: rgba(#fff, 0);
+    }
+
+    * {
+      transition: 0.15s;
     }
   }
 }

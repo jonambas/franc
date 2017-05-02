@@ -15,7 +15,6 @@
     width: auto;
     height: auto;
     min-width: 100%;
-    // padding-bottom: 56.25%;
     min-height: 100%;
 
     iframe {
@@ -27,7 +26,7 @@
     }
   }
 
-  &__textWrapper {
+  &__bigLogo {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,46 +38,23 @@
     }
   }
 
-  &__text {
-    & > p {
-      margin: 0;
-      color: color(white);
-      font-weight: 300;
-      font-size: rem(50);
-      line-height: rem(50);
-
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-
-      strong {
-        font-weight: 500;
-      }
-
-      @media screen and (min-width: break(md)) {
-        font-size: rem(70);
-        line-height: rem(70);
-      }
-
-      @media screen and (min-width: break(lg)) {
-        font-size: rem(90);
-        line-height: rem(90);
-      }
-
-      @media screen and (min-width: break(xl)) {
-        font-size: rem(115);
-        line-height: rem(115);
-      }
-    }
-  }
-
   // Play Button
   &__play {
     display: block;
     position: absolute;
-    right: 0%;
-    top: 50%;
-    transform: translate(0, -50%);
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translate(-50%, 0);
+
+    @media only screen and (min-width: break(md)) {
+      left: auto;
+      bottom: auto;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
   }
 
   &__playLink {
@@ -92,7 +68,6 @@
     transition: 0.2s cubic-bezier(0.1, 0.1, 0.1,1);
 
     &:hover, &:active, &:focus {
-      // transform: translate(4px, 0);
       .home__playSvg {
         fill: rgba(color(white), 1);
       }
@@ -153,7 +128,6 @@
 
         circle {
           fill: rgba(#fff, 1);
-
         }
       }
     }

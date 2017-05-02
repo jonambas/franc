@@ -12,13 +12,11 @@
     </div>
 
     {{-- <iframe src="https://player.vimeo.com/video/209304203?autoplay=1&loop=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> --}}
-    <div class="home__textWrapper">
+    <div class="home__bigLogo">
       <div class="container">
-        <div class="flex middle-xs">
-          <div class="col-xs-9 col-md-10 col-lg-8">
-            <div class="home__text">
-              {{ the_field( 'home_title' ) }}
-            </div>
+        <div class="flex middle-xs center-xs">
+          <div class="col-xs-8 col-md-6">
+            @include('partials.svg-logo')
           </div>
         </div>
       </div>
