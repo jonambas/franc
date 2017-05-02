@@ -8,8 +8,7 @@
   @while(have_posts()) @php(the_post())
 
     <div class="container">
-
-      <div class="container--fullHeight flex middle-xs">
+      <div class="container--contact flex middle-xs">
         <div class="col-xs">
 
           <div class="flex center-xs text--left">

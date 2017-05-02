@@ -38,7 +38,8 @@ $box-map: (
   md: rem(18),
   lg: rem(36),
   xl: rem(54),
-  xxl: rem(72)
+  xxl: rem(72),
+  xxxl: rem(90)
 );
 
 @each $size, $n in $box-map {

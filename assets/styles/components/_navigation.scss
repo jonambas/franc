@@ -2,8 +2,10 @@ $nav-height: rem(105);
 
 .navigation {
   &__wrapper {
-    position: relative;
+    position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 2;
 
     body.home & {

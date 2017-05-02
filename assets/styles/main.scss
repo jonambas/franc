@@ -17,7 +17,7 @@
 
 
 .navOffset {
-  padding-top: rem(140);
+  padding-top: rem(150);
 }
 
 .panel {
@@ -112,5 +112,28 @@
 
   &__content {
     padding: 0 rem(42);
+  }
+}
+
+h1.company__jumboHeader {
+  color: color(white);
+
+  font-size: rem(60);
+  padding: rem(66) 0;
+
+
+  @media screen and (min-width: break(md)) {
+    font-size: rem(90);
+    padding: rem(75) 0;
+  }
+
+  @media screen and (min-width: break(lg)) {
+    font-size: rem(100);
+    padding: rem(90) 0;
+  }
+
+  @media screen and (min-width: break(xl)) {
+    font-size: rem(120);
+    padding: rem(100) 0;
   }
 }

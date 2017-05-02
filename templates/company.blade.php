@@ -13,17 +13,20 @@
       <div class="container">
         <div class="flex">
 
+          <div class="col-xs-9">
+            <h1 class="company__jumboHeader">{{ the_field( 'hero_title' ) }}</h1>
+          </div>
+
+          <div class="col-xs-3">
+            {{-- <img src="" /> --}}
+          </div>
+
           <div class="col-xs-12">
-            <h3 class="line--xl marginBottom--lg underscore"><strong>Strategy &amp; Design</strong></h3>
-            <h1 class="text-thinHeader marginBottom--xl">Approach</h1>
+            <h1 class="text-thinHeader line--xxxl marginBottom--lg underscore">Approach</h1>
           </div>
 
-          <div class="col-xs-12 col-lg-6">
+          <div class="col-xs-12">
             {{ the_field( 'approach' ) }}
-          </div>
-
-          <div class="col-xs-12 col-lg-3">
-            <img src="" />
           </div>
 
         </div>
@@ -33,7 +36,7 @@
     @if(have_rows('capabilities'))
       <div class="panel">
         <div class="container">
-          <h1 class="line--xxl underscore marginBottom--xxl">Capabilities</h1>
+          <h1 class="line--xxxl underscore marginBottom--xxl">Capabilities</h1>
 
           <div class="flex">
 

@@ -39,6 +39,9 @@ body {
   }
 }
 
-.container--fullHeight {
+.container--contact {
+  position: relative;
+  padding: rem(150) 0 rem(48);
+  box-sizing: border-box;
   height: 100vh;
 }

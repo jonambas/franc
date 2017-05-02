@@ -2,7 +2,7 @@
 
 <div class="caseStudy">
 
-  <div class="caseStudy__hero">
+  {{-- <div class="caseStudy__hero">
     @if (has_post_thumbnail( $post->ID ))
       @php
         $thumb_url_array = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail-size', true);
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
 
   @if(have_rows('sections'))
