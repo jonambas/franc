@@ -29,14 +29,17 @@
                 <img class="caseStudies__bg" src="{{$thumb_url}}" alt="">
               @endif
 
+              <a href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__hoverArea">
                 <div class="flex middle-xs">
                   <div class="col-xs-12 col-md-8 col-lg-7">
-                    <a href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__titleBox">
+                    <div href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__titleBox">
                       <h3 class="line--xl underscore"><strong>{{ the_field( 'subtitle' ) }}</strong></h3>
-                      <h1 class="marginBottom--xl">{{ get_the_title() }}</h1>
-                    </a>
+                      <h1 class="">{{ get_the_title() }}</h1>
+                    </div>
                   </div>
                 </div>
+              </a>
+              <div class="caseStudies__redArea"></div>
 
             </div>
           @endwhile

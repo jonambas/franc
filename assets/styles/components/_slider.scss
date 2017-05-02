@@ -15,7 +15,7 @@
 
 .caseStudies {
   position: relative;
-  padding: rem(140) 0 rem(60);
+  padding: rem(150) 0 rem(48);
   box-sizing: border-box;
   height: 100vh;
 
@@ -33,15 +33,41 @@
     color: color(gray--medium)
   }
 
-  &__titleBox {
-    display: block;
-    padding: rem(51);
-    background: color(gray);
-    border: 1px solid transparent;
+
+  &__hoverArea {
+    position: absolute;
+    left: 10%;
+    right: 15%;
+    top: 15%;
+    bottom: 15%;
+    z-index: 2;
 
     &:hover {
       text-decoration: none;
+    }
+  }
+
+  &__redArea {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: 0.15s;
+
+    .caseStudies__hoverArea:hover + & {
       background: color(red);
+    }
+  }
+
+  &__titleBox {
+    display: block;
+    opacity: 0;
+
+    .caseStudies__hoverArea:hover & {
+      opacity: 1;
 
       h1, h3 {
         color: white;
@@ -73,17 +99,10 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    height: auto;
-    max-width: 120%;
+    max-height: 100%;
+    width: auto;
     z-index: -1;
     transform: translate(-50%, -50%);
-
-    @media screen and (min-width: break(md)) {
-      left: auto;
-      right: 0;
-      max-width: 75%;
-      transform: translate(0, -50%);
-    }
   }
 
   &__more {
