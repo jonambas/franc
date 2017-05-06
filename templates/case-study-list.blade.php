@@ -51,7 +51,7 @@
               <div class="flex middle-xs">
                 <div class="col-xs-12 col-md-10 col-lg-7">
                   <div class="caseStudies__more">
-                    <h1 class="line--xl"><strong>More on the way.</strong></h1>
+                    <h1 class="line--xl">More on the way.</h1>
                     <h4><strong>
                       <a href="{{ get_permalink(get_page_by_title('Contact')) }}">Contact Us</a> to see more examples of our work.
                     </strong></h4>

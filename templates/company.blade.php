@@ -73,10 +73,10 @@
           <div class="leadershipSlider__slide">
             <div class="container">
               <div class="flex middle-xs">
-                <div class="col-xs-12 col-md-5">
-                  img
+                <div class="col-xs-12 col-md-6">
+
                 </div>
-                <div class="col-xs-12 col-md-7 col-lg-5">
+                <div class="col-xs-12 col-md-6 col-lg-6">
                   <h1 class="leadershipSlider__name">{{ get_the_title() }}</h1>
                   <h4><strong>{{ the_field( 'job_title' ) }}</strong></h4>
                   <p>{{ the_field( 'description' ) }}</p>

@@ -108,6 +108,10 @@
   &__more {
     padding: rem(51);
 
+    h1 {
+      margin-left: -3px; 
+    }
+
     h4 {
       color: color(gray--medium);
     }
