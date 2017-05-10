@@ -63,7 +63,12 @@
       </div>
 
       @php
-        $args = array( 'post_type' => 'bios', 'posts_per_page' => 10 );
+        $args = array(
+          'post_type' => 'bios',
+          'posts_per_page' => 10,
+          'orderby' => 'order',
+	        'order' => 'ASC'
+        );
         $bios = new WP_Query( $args );
       @endphp
 
@@ -72,9 +77,9 @@
         @while($bios->have_posts()) @php($bios->the_post())
           <div class="leadershipSlider__slide">
             <div class="container">
-              <div class="flex middle-xs">
-                <div class="col-xs-12 col-md-6">
-
+              <div class="flex middle-md">
+                <div class="col-xs-12 col-md-6 leadershipSlider__imageWrapper">
+                  <img class="leadershipSlider__image" src="{{ the_field( 'photo' ) }}" alt="{{ get_the_title() }}">
                 </div>
                 <div class="col-xs-12 col-md-6 col-lg-6">
                   <h1 class="leadershipSlider__name">{{ get_the_title() }}</h1>
