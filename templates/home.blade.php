@@ -9,6 +9,9 @@
 
     <div class="home__bgVideoWrapper">
       <div class="home__bgVideo">{{{ the_field( 'home_background_video' ) }}}</div>
+      @if (get_field( 'poster' ))
+        <div class="home__bgPoster"><img src="{{ the_field( 'poster' ) }}" alt="Franc"></div>
+      @endif
     </div>
 
     {{-- <iframe src="https://player.vimeo.com/video/209304203?autoplay=1&loop=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> --}}

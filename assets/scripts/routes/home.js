@@ -21,6 +21,7 @@ const video = {
 
   cacheDom() {
     this.homeVideo = $('.home__bgVideo');
+    this.poster = $('.home__bgPoster');
     this.brandVideo = $('.home__brandVideo');
     this.brandVideoWrapper = $('.home__brandVideoWrapper');
 
@@ -28,6 +29,7 @@ const video = {
     this.closeButton = $('.home__closeLink');
 
     this.brandPlayer = new Player(this.brandVideoWrapper.find('iframe'));
+    this.bgPlayer = new Player(this.homeVideo.find('iframe'));
     this.window = $(window);
   },
 
@@ -35,6 +37,14 @@ const video = {
     this.window.on('resize', () => this._sizeVideo());
     this.playButton.on('click', (e) => this._playVideo(e))
     this.closeButton.on('click', (e) => this._hideVideo(e))
+    this.bgPlayer.on('timeupdate', (data) => this._hidePoster(data));
+  },
+
+  _hidePoster(data) {
+    if (data.seconds > 0) {
+      this.poster.addClass('is-hidden');
+      this.bgPlayer.off('timeupdate');
+    }
   },
 
   _sizeVideo() {

@@ -26,6 +26,25 @@
     }
   }
 
+  &__bgPoster > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  &__bgPoster.is-hidden > img {
+    opacity: 0;
+
+  }
+
   &__bigLogo {
     position: absolute;
     top: 0;
