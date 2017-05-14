@@ -20,6 +20,8 @@ const video = {
   },
 
   cacheDom() {
+    this.loader = $('.home__loader');
+
     this.homeVideo = $('.home__bgVideo');
     this.poster = $('.home__bgPoster');
     this.brandVideo = $('.home__brandVideo');
@@ -38,6 +40,13 @@ const video = {
     this.playButton.on('click', (e) => this._playVideo(e))
     this.closeButton.on('click', (e) => this._hideVideo(e))
     this.bgPlayer.on('timeupdate', (data) => this._hidePoster(data));
+    $( window ).on('load', () => this._hideLoader());
+  },
+
+  _hideLoader() {
+    setTimeout(() => {
+        this.loader.addClass('is-hidden');
+    }, 1000);
   },
 
   _hidePoster(data) {

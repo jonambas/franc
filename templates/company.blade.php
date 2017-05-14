@@ -25,7 +25,7 @@
             <h1 class="text-thinHeader line--xxxl marginBottom--lg underscore">Approach</h1>
           </div>
 
-          <div class="col-xs-12">
+          <div class="col-xs-12 company__approachText">
             {{ the_field( 'approach' ) }}
           </div>
 
@@ -36,7 +36,7 @@
     @if(have_rows('capabilities'))
       <div class="panel">
         <div class="container">
-          <h1 class="line--xxxl underscore marginBottom--xxl">Capabilities</h1>
+          <h1 class="text-thinHeader line--xxxl underscore marginBottom--xxl">Capabilities</h1>
 
           <div class="flex">
 
@@ -59,7 +59,7 @@
 
     <div class="leadershipSlider">
       <div class="container">
-        <h1 class="leadershipSlider__title line--xxl underscore">Leadership</h1>
+        <h1 class="text-thinHeader leadershipSlider__title line--xxl underscore">Leadership</h1>
       </div>
 
       @php
@@ -77,14 +77,14 @@
         @while($bios->have_posts()) @php($bios->the_post())
           <div class="leadershipSlider__slide">
             <div class="container">
-              <div class="flex middle-md">
-                <div class="col-xs-12 col-md-6 leadershipSlider__imageWrapper">
+              <div class="flex middle-xs">
+                <div class="col-xs-12 last-xs first-md col-md-6 leadershipSlider__imageWrapper">
                   <img class="leadershipSlider__image" src="{{ the_field( 'photo' ) }}" alt="{{ get_the_title() }}">
                 </div>
-                <div class="col-xs-12 col-md-6 col-lg-6">
-                  <h1 class="leadershipSlider__name">{{ get_the_title() }}</h1>
-                  <h4><strong>{{ the_field( 'job_title' ) }}</strong></h4>
-                  <p>{{ the_field( 'description' ) }}</p>
+                <div class="col-xs-12 last-md first-xs col-md-6 col-lg-6 leadershipSlider__textWrapper">
+                  <h6 class="leadershipSlider__name">{{ get_the_title() }}</h6>
+                  <h5><strong>{{ the_field( 'job_title' ) }}</strong></h5>
+                  <div class="leadershipSlider__description">{{ the_field( 'description' ) }}</div>
                 </div>
               </div>
             </div>

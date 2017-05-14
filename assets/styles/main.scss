@@ -119,6 +119,8 @@ h1.company__jumboHeader {
   color: color(white);
 
   font-size: rem(60);
+  font-weight: 200;
+  text-transform: uppercase;
   padding: rem(66) 0;
 
 
@@ -136,4 +138,11 @@ h1.company__jumboHeader {
     font-size: rem(120);
     padding: rem(100) 0;
   }
+}
+
+.company__approachText p {
+  font-size: 2rem;
+  line-height: 2em;
+  font-weight: 200;
+  color: color(gray--medium);
 }

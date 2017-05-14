@@ -101,7 +101,8 @@ $nav-height: rem(105);
 
       color: color(white);
       font-size: rem(30);
-      font-weight: 300;
+      font-weight: 200;
+      text-transform: uppercase;
 
       @media only screen and (min-width: break(md)) {
         font-size: rem(60);

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600');
 
 html {
   color: color(gray--dark);
@@ -6,7 +7,7 @@ html {
 
 body {
   font:{
-    family: $roboto;
+    family: $montserrat;
     weight: 400;
   }
   line-height: 2em;
@@ -16,11 +17,11 @@ html, body {
   font-size: 13px;
 
   @media only screen and (min-width: break(lg)) {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   @media only screen and (min-width: break(xxl)) {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -42,7 +43,7 @@ a {
 }
 
 p {
-  color: color(gray--dark);
+  color: color(p);
 }
 
 %header {
@@ -54,9 +55,10 @@ p {
   -moz-osx-font-smoothing: grayscale;
 
   color: color(gray--dark);
+  text-transform: uppercase;
 
   font:{
-    family: $roboto;
+    family: $montserrat;
     weight: 300;
   }
 
@@ -95,4 +97,12 @@ code, pre {
 
   white-space: nowrap;
   line-height: 1.5em;
+}
+
+.text-thinHeader {
+  font-weight: 200;
+}
+
+.text-center {
+  text-align: center;
 }

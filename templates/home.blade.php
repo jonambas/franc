@@ -7,6 +7,40 @@
 @section('content')
   @while(have_posts()) @php(the_post())
 
+    <div class="home__loader"><img src="@asset('images/loading.gif')"></div>
+
+    <style>
+    .home__loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #DC0000;
+      z-index: 10000;
+
+      opacity: 1;
+    }
+
+    .home__loader.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+
+      -webkit-transition: 1s;
+      -o-transition: 1s;
+      transition: 1s;
+    }
+
+    .home__loader img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    </style>
+    
     <div class="home__bgVideoWrapper">
       <div class="home__bgVideo">{{{ the_field( 'home_background_video' ) }}}</div>
       @if (get_field( 'poster' ))
