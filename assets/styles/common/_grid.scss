@@ -114,6 +114,10 @@ $grid-columns: 12;
       }
     }
 
+    .#{$column-namespace}-#{$bp}-offset-0 {
+      margin-left: 0;
+    }
+
     .start-#{$bp} {
       justify-content: flex-start;
       text-align: start;

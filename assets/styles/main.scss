@@ -108,6 +108,7 @@
 .capability {
   &__image {
     width: 100%;
+    margin-bottom: rem(30);
   }
 
   &__content {
@@ -141,8 +142,13 @@ h1.company__jumboHeader {
 }
 
 .company__approachText p {
-  font-size: 2rem;
+  font-size: 1rem;
   line-height: 2em;
-  font-weight: 200;
+  font-weight: 400;
   color: color(gray--medium);
+
+  @media screen and (min-width: break(md)) {
+    font-size: 2rem;
+    font-weight: 200;
+  }
 }
