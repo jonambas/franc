@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { TweenMax, Power2 } from 'gsap';
 
 export default {
   init(namespace) {
@@ -22,19 +23,30 @@ export default {
   bindEvents() {
     this.next.on('click', (e) => {
       e.preventDefault();
-      this.goTo(this.index + 1)
+      this.goTo(this.index + 1, 'next')
     });
 
     this.prev.on('click', (e) => {
       e.preventDefault();
-      this.goTo(this.index - 1)
+      this.goTo(this.index - 1, 'prev')
     });
   },
 
-  goTo(i) {
+  goTo(i, dir = 'next') {
+    const prevSlide = $(`.${this.namespace}__slide.is-visible`);
+
     $(`.${this.namespace}__slide.is-visible`).removeClass('is-visible');
     this.index = i;
     $(this.slides[this.index]).addClass('is-visible');
+
+    const nextSlide = $(`.${this.namespace}__slide.is-visible`);
+    const x = dir === 'next' ? 15 : -15;
+
+    TweenMax.set(nextSlide, { x, opacity: 0 });
+    TweenMax.set(prevSlide, { x:0, opacity:1 });
+
+    TweenMax.to(nextSlide, 0.6, { x:0, opacity:1, ease:Power2.easeOut});
+    TweenMax.to(prevSlide, 0.5, { x:-x, opacity:0, ease:Power2.easeOut});
 
     if (this.index === this.length) {
       this.next.addClass('is-disabled');

@@ -75,7 +75,7 @@
       <div class="leadershipSlider__slides">
 
         @while($bios->have_posts()) @php($bios->the_post())
-          <div class="leadershipSlider__slide">
+          <div class="leadershipSlider__slide gsap__slide">
             <div class="container">
               <div class="flex middle-xs">
                 <div class="col-xs-12 last-xs first-md col-md-6 leadershipSlider__imageWrapper">

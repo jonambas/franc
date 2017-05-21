@@ -19,7 +19,7 @@
         <div class="caseStudies__slides">
 
           @while($caseStudies->have_posts()) @php($caseStudies->the_post())
-            <div class="caseStudies__slide">
+            <div class="caseStudies__slide gsap__slide">
 
               @if (has_post_thumbnail( $post->ID ))
                 @php

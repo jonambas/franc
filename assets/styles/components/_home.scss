@@ -84,9 +84,18 @@
     background: color(red);
     color: color(white);
 
-    transition: 0.2s cubic-bezier(0.1, 0.1, 0.1,1);
+    transform: translate(0, 6px);
+    padding-bottom: rem(30);
+    transition: 0.3s cubic-bezier(0.1, 0.1, 0.1,1);
+
+    @media only screen and (min-width: break(md)) {
+      transform: translate(6px, 0);
+      padding-right: rem(30);
+      padding-bottom: rem(24);
+    }
 
     &:hover, &:active, &:focus {
+      transform: translate(0, 0);
       .home__playSvg {
         fill: rgba(color(white), 1);
       }

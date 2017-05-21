@@ -22,10 +22,16 @@ $nav-height: rem(105);
     padding: rem(66) rem(32) rem(48);
     background: color(red);
 
+    transform: translate(0, -6px);
+    transition: 0.3s cubic-bezier(0.1, 0.1, 0.1,1);
+
+    &:hover {
+      transform: translate(0, 0);
+    }
 
     &:hover .navigation__hamburger {
-      &:after { transform: translate(0, -2px); }
-      &:before { transform: translate(0, 2px); }
+      &:after { transform: translate(0, -1px); }
+      &:before { transform: translate(0, 1px); }
     }
   }
 
@@ -75,7 +81,7 @@ $nav-height: rem(105);
     opacity: 0;
     pointer-events: none;
 
-    transition: 0.15s;
+    transition: 0.3s;
 
     &.is-open {
       opacity: 1;
@@ -95,25 +101,52 @@ $nav-height: rem(105);
     ul > li { }
 
     ul > li > a {
+      position: relative;
       display: inline-block;
-      padding: rem(27);
+      padding: rem(27) 0;
       margin: rem(18);
 
       color: color(white);
       font-size: rem(30);
       font-weight: 200;
       text-transform: uppercase;
+      overflow: hidden;
 
       @media only screen and (min-width: break(md)) {
         font-size: rem(60);
-        padding: rem(60) rem(60);
+        padding: rem(50) 0;
       }
 
       &:hover, &:active, &:focus {
-        background: color(white);
-        color: color(red);
+        // background: color(white);
+        // color: color(red);
         cursor: pointer;
         text-decoration: none;
+
+        &:before, &:after {
+          transform: scaleX(1);
+        }
+      }
+
+      &:before, &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        transform: scaleX(0);
+      }
+
+      &:before {
+        background: rgba(#000, 0.1);
+        transition: 0.3s cubic-bezier(0.1, 0.1, 0.1,1);
+      }
+
+      &:after {
+        background: color(white);
+        transition: 0.35s 0.1s cubic-bezier(0.1, 0.1, 0.1,1);
       }
     }
   }
