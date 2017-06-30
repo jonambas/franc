@@ -11,7 +11,7 @@
       </div>
 
       <div class="col-xs-12 col-lg-3 marginBottom--xl">
-        <p class="footer__desc"><strong>Franc</strong> is an animation and design studio based in Annapolis, Maryland.</p>
+        <p class="footer__desc"><strong>Franc</strong> is an animation and design studio based in Baltimore, Maryland.</p>
       </div>
 
       <div class="col-xs-6 col-lg-2 col-lg-offset-1">
