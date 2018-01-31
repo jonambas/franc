@@ -10,10 +10,6 @@ pre,table,fieldset,hr {
   margin-bottom: rem(18);
 }
 
-html {
-  background-color: color(gray);
-}
-
 hr {
   border: none;
   border-bottom: 1px solid color(gray--medium);
@@ -34,8 +30,12 @@ body {
   margin: 0 auto;
   padding: 0 rem(30);
 
+  body.home & {
+    max-width: none !important;
+  }
+
   @media only screen and (min-width:break(md)) {
-    padding: 0 rem(42);
+    padding: 0 rem(50);
   }
 }
 

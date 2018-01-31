@@ -1,3 +1,8 @@
+/**
+* Sorry if you ever have to work in here.
+* CSS is a mess and all over the place.
+*/
+
 @import "common/normalize";
 @import "common/variables";
 @import "common/functions";
@@ -53,6 +58,16 @@
   }
 }
 
+html {}
+
+// Set background colors
+body {
+  background-color: color(white);
+
+  // &.page-template-company-blade, &.page-template-case-study-list-blade {
+  // }
+}
+
 .navigation__wrapper .brand {
   float: left;
 
@@ -63,33 +78,34 @@
   &__logo {
     display: block;
     padding: $nav-height*.5 0 0;
-    height: $nav-height*.5;
+    height: rem(40);
     width: auto;
 
     @media screen and (min-width: break(md)) {
       padding: $nav-height*.42 0 0;
-      height: $nav-height*.66;
+      height: rem(40);
     }
 
     body.home & {
-      display: none;
+      // display: none;
     }
 
     body.company footer & {
       fill: color(white);
     }
 
+    body.home &,
     body.company &, body.contact &,
     body.page-template-company-blade &,
-    body.page-template-case-study-list-blade &,
-    body.single-case_studies & {
+    body.single-case_studies &,
+    body.page-template-case-study-list-blade & {
       fill: color(red);
     }
   }
 }
 
 .home__bigLogo {
-  fill: color(white);
+  display: none;
 }
 
 .footer .brand {
@@ -110,45 +126,283 @@
     width: 100%;
     margin-bottom: rem(30);
   }
-
-  &__content {
-    padding: 0 rem(42);
-  }
 }
 
+// Company Page
 h1.company__jumboHeader {
-  color: color(white);
+  color: color(gray--dark);
 
-  font-size: rem(60);
-  font-weight: 200;
-  text-transform: uppercase;
-  padding: rem(66) 0;
-
+  font-size: rem(40);
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.5em;
+  padding: rem(50) 0 0;
 
   @media screen and (min-width: break(md)) {
-    font-size: rem(90);
-    padding: rem(75) 0;
+    font-size: rem(42);
   }
 
+  // @media screen and (min-width: break(md)) {
+  //   font-size: rem(90);
+  //   padding: rem(75) 0;
+  // }
+
   @media screen and (min-width: break(lg)) {
-    font-size: rem(100);
-    padding: rem(90) 0;
+    font-size: rem(57);
   }
 
   @media screen and (min-width: break(xl)) {
-    font-size: rem(120);
-    padding: rem(100) 0;
+    font-size: rem(57);
+    padding: rem(50) 0 0;
+  }
+
+  strong {
+    text-transform: uppercase;
+    color: color(red);
+    letter-spacing: 0.1em;
+
+    &:before {
+      display: block;
+      content: "";
+    }
+  }
+}
+
+.company__headerContact, .caseStudy__back {
+  position: relative;
+  display: inline-block;
+  color: color(red);
+  text-transform: uppercase;
+  font-size: rem(16);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  margin-bottom: rem(120);
+  padding-right: rem(18);
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
+
+  &:after {
+    position: absolute;
+    right: 2px;
+    top: 45%;
+
+    display: block;
+    content: "";
+    width: rem(7);
+    height: rem(7);
+    border-right: 2px solid color(red);
+    border-top: 2px solid color(red);
+
+    transform: rotate(45deg) translate(0, -50%);
+  }
+}
+
+.caseStudy__back {
+  margin-bottom: rem(42);
+  padding-left: rem(24);
+  padding-right: 0;
+
+  &:after {
+    left: 0px;
+    right: auto;
+    transform: rotate(-135deg) translate(0, 50%);
   }
 }
 
 .company__approachText p {
-  font-size: 1rem;
-  line-height: 2em;
+  position: relative;
+  font-size: rem(18);
+  line-height: 2.5em;
   font-weight: 400;
-  color: color(gray--medium);
+  color: color(p);
+  font-family: $merriweather;
 
   @media screen and (min-width: break(md)) {
-    font-size: 2rem;
-    font-weight: 200;
+    font-size: rem(21);
+  }
+
+  em {
+    font-style: normal;
+    color: color(red);
+  }
+
+  &:before {
+    position: absolute;
+    top: rem(-13);
+    left: 0;
+    display: block;
+    content: "";
+    height: 2px;
+    width: rem(22);
+    background: color(red);
+  }
+}
+
+.comapy__headerImageWrapper {
+  position: relative;
+}
+
+.company__headerImage {
+  position: absolute;
+  width: 40%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    max-width: 130%;
+
+    display: none;
+
+    @media screen and (min-width: break(md)) {
+      display: block;
+    }
+  }
+}
+
+// Capabilities
+.capability {
+  position: relative;
+  padding-top: rem(46);
+  padding-bottom: rem(46);
+  margin-bottom: rem(46);
+
+  @media screen and (min-width: break(md)) {
+    // min-height:  rem(400);
+    // max-height: rem(400);
+  }
+
+  // @media screen and (min-width: break(lg)) {
+  //   min-height:  rem(400);
+  //   max-height: rem(400);
+  // }
+
+  .divider__left, .divider__right {
+    display: none;
+    position: absolute;
+    left: 49%;
+    margin-left: -47px;
+    top: 0;
+
+    path {
+      stroke-width: 2px !important;
+      stroke-miterlimit: 10.0;
+    }
+
+    @media screen and (min-width: break(lg)) {
+      display: block
+    }
+  }
+
+  &.capability--right {
+    .divider__left {
+      margin-left: 0;
+      transform:  scaleX(-1);
+    }
+  }
+
+  &:nth-child(3n) {
+    position: relative;
+    z-index: 3;
+
+    .divider__left {}
+
+    .divider__left path,.divider__right path {
+      // Red thicker line
+      // stroke: color(red)!important;
+      // stroke-width: 4px !important;
+    }
+  }
+}
+
+.capability__straightDivider {
+  position: absolute;
+  left: 50%;
+  top: rem(46);
+  bottom: rem(46);
+  width: 2px;
+  background: #5b5b5b;
+
+  display: none;
+
+  @media screen and (min-width: break(lg)) {
+    display: block
+  }
+}
+
+.capability__content {
+  .capability--left & {
+    padding-left: rem(15);
+    @media screen and (min-width: break(md)) {
+      padding-left: rem(60);
+    }
+  }
+
+  .capability--right & {
+    padding-right: rem(15);
+    @media screen and (min-width: break(md)) {
+      padding-right: rem(60);
+    }
+  }
+
+  h4 {
+    color: color(red);
+    margin-bottom: rem(36);
+    margin-top: rem(24);
+    font-size: rem(24);
+    font-weight: 500;
+  }
+
+  p {
+    font-family: $merriweather;
+    font-size: rem(18);
+    line-height: 2.2em;
+    color: color(p);
+  }
+}
+
+.capability__imageWrapper {
+  position: relative;
+
+  .capability--left & {
+    // padding-right: rem(15);
+    // @media screen and (min-width: break(md)) {
+    //   padding-right: rem(90);
+    // }
+  }
+
+  .capability--right & {
+    // padding-left: rem(15);
+    // @media screen and (min-width: break(md)) {
+    //   padding-left: rem(90);
+    // }
+  }
+}
+
+.capability__image {
+  display: none;
+  margin: 0;
+
+  @media screen and (min-width: break(md)) {
+    display: inline-block;
+    position: absolute;
+    height: 90%;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  @media screen and (min-width: break(lg)) {
+    height: 140%;
   }
 }

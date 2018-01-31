@@ -1,33 +1,35 @@
 .contact {
   &__header {
-    color: color(gray--medium);
-    font-weight: 700;
-    line-height: rem(51);
+    color: color(gray--dark);
+    font-weight: 500;
+    line-height: rem(48);
 
     margin: 0;
 
-    &:after { @include underscore; }
+    &:after {
+      @include underscore;
+      background: color(red);
+      margin-bottom: rem(21);
+    }
   }
 
   &__list {
     list-style: none;
-    margin: 0;
+    margin: 0 0 rem(18);
     padding: 0;
   }
 
   &__listItem {
     a {
-      line-height: rem(51);
-      font-weight: 300;
+      line-height: rem(48);
+      font-weight: 400;
+      // font-family: $merriweather;
       color: color(gray--dark)
     }
   }
 
   &__address {
-    line-height: rem(51);
-    font-weight: 500;
-    color: color(gray--dark);
-    font-style: normal;
+
   }
 
   // Form
@@ -46,12 +48,14 @@
     input {
       display: inline-block;
       vertical-align: top;
-      border: none;
-      padding: rem(36) rem(24) rem(24);
-      min-width: rem(230);
+      border: 2px solid color(red);
+      padding: 0 12px;
+      height: 64px;
+      min-width: rem(180);
 
-      @media screen and (min-width: break(lg)) {
-        padding: rem(36) rem(36) rem(24);
+      @media screen and (min-width: break(md)) {
+        min-width: rem(230);
+        // padding: 24px 20px;
       }
 
       &:hover, &:active, &:focus {
@@ -60,8 +64,8 @@
 
       &:active, &:focus {
         & + .contact__label {
-          font-size: rem(14);
-          transform: translate(0, 0);
+          // font-size: rem(14);
+          // transform: translate(0, 0);
         }
       }
     }
@@ -79,8 +83,8 @@
   &__label {
     display: block;
     position: absolute;
-    top: 2px;
-    left: rem(24);
+    top: 7px;
+    left: rem(20);
     transform: translate(0, -50%);
 
     font-weight: 500;
@@ -91,7 +95,7 @@
     pointer-events: none;
 
     @media screen and (min-width: break(lg)) {
-      left: rem(36);
+      left: rem(20);
     }
 
     &.is-active {
@@ -103,12 +107,15 @@
   &__submit {
     display: inline-block;
     vertical-align: top;
-    border: none;
+    border: 2px solid color(red);
+    height: 68px;
 
+    font-family: $montserrat;
     font-weight: 500;
-    padding: rem(30) rem(21);
+    letter-spacing: 0.1em;
+    padding: 0 32px;
     color: color(white);
-    background: color(gray--medium);
+    background: color(red);
     outline: none;
     transition: 0.15s;
 
@@ -118,7 +125,8 @@
     }
 
     @media screen and (min-width: break(lg)) {
-      padding: rem(30) rem(42);
+      // padding: 24px 32px;
+      // height: 67px;
     }
   }
 }

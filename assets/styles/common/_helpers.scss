@@ -154,12 +154,15 @@ $box-map: (
   margin-bottom: rem(21);
   margin-left: rem(3);
   height: 2px;
-  width: rem(39);
+  width: rem(22);
   background: color(gray--medium);
 }
 
 .underscore:after { @include underscore; }
-
+.underscore--red:after {
+  @include underscore;
+  background: color(red);
+}
 
 
 .text-strong {

@@ -19,7 +19,7 @@
         <div class="caseStudies__slides">
 
           @while($caseStudies->have_posts()) @php($caseStudies->the_post())
-            <div class="caseStudies__slide gsap__slide">
+            <div class="caseStudies__slide"> {{-- gsap__slide --}}
 
               @if (has_post_thumbnail( $post->ID ))
                 @php
@@ -30,13 +30,9 @@
               @endif
 
               <a href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__hoverArea">
-                <div class="flex middle-xs">
-                  <div class="col-xs-12 col-md-8 col-lg-7">
-                    <div href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__titleBox">
-                      <h3 class="line--xl underscore"><strong>{{ the_field( 'subtitle' ) }}</strong></h3>
-                      <h1 class="">{{ get_the_title() }}</h1>
-                    </div>
-                  </div>
+                <div href="{{ the_permalink() }}" title="{{ get_the_title() }}" class="caseStudies__titleBox">
+                  <h1 class="underscore"><strong>{{ get_the_title() }}</strong></h1>
+                  <h3 class="">{{ the_field( 'subtitle' ) }}</h3>
                 </div>
               </a>
               <div class="caseStudies__redArea"></div>
@@ -46,19 +42,20 @@
 
 
           {{-- Slide 2 --}}
+          {{-- get_permalink(get_page_by_title('Contact')) --}}
 
-            <div class="caseStudies__slide">
+            <!-- <div class="caseStudies__slide">
               <div class="flex middle-xs">
                 <div class="col-xs-12 col-md-10 col-lg-7">
                   <div class="caseStudies__more">
-                    <h1 class="line--xl">More on the way.</h1>
+                    <h1 class="line- -xl">More on the way.</h1>
                     <h4><strong>
-                      <a href="{{ get_permalink(get_page_by_title('Contact')) }}">Contact Us</a> to see more examples of our work.
+                      <a href="">Contact Us</a> to see more examples of our work.
                     </strong></h4>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
         </div>
         <div class="caseStudies__controls">

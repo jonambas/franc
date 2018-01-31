@@ -32,6 +32,8 @@ const video = {
 
     this.brandPlayer = new Player(this.brandVideoWrapper.find('iframe'));
     this.bgPlayer = new Player(this.homeVideo.find('iframe'));
+    this.bgPlayer.setVolume(0);
+    this.bgPlayer.play();
     this.window = $(window);
   },
 

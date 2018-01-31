@@ -1,8 +1,9 @@
-import slider from '../slider';
+// import slider from '../slider';
 
 export default {
   init() {
-   slider.init('caseStudies');
+    // Disable slider
+    // slider.init('caseStudies');
   },
   finalize() {
   },

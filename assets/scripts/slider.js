@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { TweenMax, Power2 } from 'gsap';
 
-export default {
+export default class Slider {
   init(namespace) {
     this.index = 0;
     this.length = 0;
@@ -11,14 +11,14 @@ export default {
     this.bindEvents();
 
     this.goTo(0);
-  },
+  }
 
   cacheDom() {
     this.next = $(`.${this.namespace}__next`);
     this.prev = $(`.${this.namespace}__prev`);
     this.slides = $(`.${this.namespace}__slide`);
     this.length = this.slides.length - 1;
-  },
+  }
 
   bindEvents() {
     this.next.on('click', (e) => {
@@ -30,7 +30,7 @@ export default {
       e.preventDefault();
       this.goTo(this.index - 1, 'prev')
     });
-  },
+  }
 
   goTo(i, dir = 'next') {
     const prevSlide = $(`.${this.namespace}__slide.is-visible`);
@@ -59,5 +59,5 @@ export default {
     } else {
       this.prev.removeClass('is-disabled');
     }
-  },
+  }
 }

@@ -8,3 +8,5 @@ yarn-error.log
 vendor
 
 dist
+backup-prd
+exports

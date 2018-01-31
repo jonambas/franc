@@ -1,57 +1,73 @@
 $nav-height: rem(105);
 
+body.kill-scroll {
+  // Disables body scrolling when menu is open
+  // overflow: hidden;
+}
+
 .navigation {
   &__wrapper {
     position: absolute;
-    top: 0;
+    top: 1px;
     left: 0;
     right: 0;
     z-index: 2;
-
-    body.home & {
-      position: absolute;
-      left: 50%;
-      right: auto;
-      transform: translate(-50%, 0);
-    }
+    overflow: hidden;
   }
 
   &__hamburgerWrapper {
     position: relative;
     display: block;
-    padding: rem(66) rem(32) rem(48);
-    background: color(red);
+    // padding: rem(66) rem(32) rem(48);
+    width: rem(85);
+    height: rem(100);
+    background: transparent;
+    border: 3px solid color(red);
 
     transform: translate(0, -6px);
     transition: 0.3s cubic-bezier(0.1, 0.1, 0.1,1);
 
     &:hover {
-      transform: translate(0, 0);
+      transform: translate(0, -3px);
+    }
+
+    body.page-template-case-study-list-blade & {
+      // border: 3px solid color(white);
     }
 
     &:hover .navigation__hamburger {
-      &:after { transform: translate(0, -1px); }
-      &:before { transform: translate(0, 1px); }
+      &:after { transform: translate(0, 0px); }
+      &:before { transform: translate(0, 0px); }
     }
   }
 
   &__hamburger {
     display: block;
-    position: relative;
-    height: rem(3);
-    width: rem(54);
-    background: color(white);
-    border-radius: 2px;
+    position: absolute;
+    bottom: rem(33);
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    height: 3px;
+    width: rem(40);
+    background: color(red);
+
+    body.page-template-case-study-list-blade & {
+      // background: color(white);
+    }
 
     &:after, &:before {
       display: block;
       content: "";
       position: absolute;
-      height: rem(3);
-      width: rem(54);
-      background: color(white);
-      border-radius: 2px;
+      height: 3px;
+      width: rem(40);
+      background: color(red);
       transition: 0.15s;
+
+      body.page-template-case-study-list-blade & {
+        // background: color(white);
+      }
     }
 
     &:after {
@@ -75,7 +91,7 @@ $nav-height: rem(105);
     bottom: 0;
     left: 0;
 
-    background: color(red);
+    background: radial-gradient(center, rgba(color(red), 0.92) 0%, rgba(color(red), 0.95) 100%);
     z-index: 100;
 
     opacity: 0;
@@ -86,6 +102,7 @@ $nav-height: rem(105);
     &.is-open {
       opacity: 1;
       pointer-events: auto;
+      overflow: hidden;
     }
 
     .flex {
@@ -107,9 +124,10 @@ $nav-height: rem(105);
       margin: rem(18);
 
       color: color(white);
-      font-size: rem(30);
-      font-weight: 200;
+      font-size: rem(27);
       text-transform: uppercase;
+      font-weight: 300;
+
       overflow: hidden;
 
       @media only screen and (min-width: break(md)) {

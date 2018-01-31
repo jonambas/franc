@@ -9,7 +9,7 @@
   * REM values will be based of this
   */
 
-$baseline: 18;
+$baseline: 15;
 
 /*
  * Colors 🖌
@@ -17,13 +17,13 @@ $baseline: 18;
  */
 
 $color-map: (
-  red          : #DD2A00,
+  red          : #DD2A00, // #CD3C1F, //CA3C1F //CD3C1F // EC3917 CD3C1F DD2A00 //CA3C1F C93C1F
   gray         : #E1F0F0,
   gray--medium : #95A4A4,
   gray--dark   : #3C4141,
   white        : #FFFFFF,
   brown        : #CCCCCC,
-  p            : #7C7C7C
+  p            : #707070
 );
 
 /*
@@ -36,7 +36,7 @@ $breakpoints: (
   md: 720px, // 48em,
   lg: 960px, // 64em,
   xl: 1200px, // 80em,
-  xxl: 1470px //98em,
+  xxl: 1300px //98em,
 );
 
 /*
@@ -56,3 +56,4 @@ $nav-width: 6rem;
 $secondary-nav-width: 10rem;
 
 $montserrat: 'Montserrat', sans-serif;
+$merriweather: 'Merriweather', serif;

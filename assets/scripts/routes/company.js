@@ -1,8 +1,12 @@
-import slider from '../slider';
+import Slider from '../slider';
 
 export default {
   init() {
-    slider.init('leadershipSlider');
+    const lead = new Slider;
+    const client = new Slider;
+
+    lead.init('leadershipSlider');
+    client.init('clientSlider');
   },
   finalize() {
   },

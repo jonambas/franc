@@ -1,0 +1,1 @@
+<svg class="divider__caseStudy" xmlns="http://www.w3.org/2000/svg" width="48.3" height="294.5"><path fill="none" stroke="#999" stroke-width="3" stroke-miterlimit="10" d="M1.5 0v56.1l44.6 44-44.6 44.6v149.8"/></svg>

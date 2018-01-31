@@ -5,8 +5,8 @@
 	    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3312e2810446505a3f69bc1ea_7bc84a3d58" tabindex="-1" value=""></div>
 
       <div class="mc-field-group contact__fieldset">
-      	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" class="contact__input">
-        <label for="mce-EMAIL" class="contact__label">Your email</label>
+      	<input type="email" value="" name="EMAIL" class="required email" placeholder='Your Email' id="mce-EMAIL" class="contact__input">
+        <!-- <label for="mce-EMAIL" class="contact__label">Your email</label> -->
       </div>
 
 

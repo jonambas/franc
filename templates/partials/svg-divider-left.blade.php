@@ -1,0 +1,1 @@
+<svg class="divider__left" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewbox="-2 0 49 356" width="52" height="356"><path stroke-linejoin="miter" fill="none" stroke="#5b5b5b" stroke-width="3" d="M46 0v56.1l-43.9 44L46 144.7V356"/></svg>

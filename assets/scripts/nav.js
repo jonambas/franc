@@ -10,6 +10,7 @@ export default {
   cacheDom() {
     this.$hamburger = $('.navigation__hamburgerWrapper');
     this.$menu = $('.navigation__menu');
+    this.$body = $('body');
     this.$closeLink = $('.navigation__closeLink');
     this.$menuItems = $('.navigation__menu li');
   },
@@ -28,6 +29,7 @@ export default {
   toggleMenu(e) {
     e.preventDefault();
     this.$menu.toggleClass('is-open');
+    this.$body.toggleClass('kill-scroll');
   },
 
   staggerItems() {

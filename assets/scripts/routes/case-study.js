@@ -1,8 +1,8 @@
-import fitvids from 'fitvids';
+// import fitvids from 'fitvids';
 
 export default {
   init() {
-    fitvids('.caseStudy__video');
+    // fitvids('.caseStudy__video');
   },
   finalize() {
   },

@@ -9,47 +9,122 @@
 
     <div class="navOffset"></div>
 
-    <div class="panel panel--gray panel--accent">
+    <div class="panel">
       <div class="container">
-        <div class="flex">
+        <div class="flex comapy__headerImageWrapper">
 
-          <div class="col-xs-9">
+          <div class="col-xs-12 col-md-8">
             <h1 class="company__jumboHeader">{{ the_field( 'hero_title' ) }}</h1>
+            <a class="company__headerContact" href="{{ get_permalink(get_page_by_title('Contact')) }}">Contact Us</a>
           </div>
 
-          <div class="col-xs-3">
-            {{-- <img src="" /> --}}
+          <div class="col-xs-12 col-md-4">
+
           </div>
 
-          <div class="col-xs-12">
-            <h1 class="text-thinHeader line--xxxl marginBottom--lg underscore">Approach</h1>
-          </div>
+          <div class="col-xs-12 company__approachContact">
 
-          <div class="col-xs-12 company__approachText">
+          </div>
+          <div class="col-xs-12 col-md-6 company__approachText">
             {{ the_field( 'approach' ) }}
+          </div>
+          <div class="col-xs-12 col-md-6"></div>
+
+          <div class='company__headerImage'>
+            <img src="{{ the_field( 'hero_image' ) }}" />
           </div>
 
         </div>
       </div>
     </div>
 
+    @if( get_field('show_clients') === 'show' )
+      @if(have_rows('clients'))
+        <div class="clientSlider">
+          <div class="clientSlider__slides">
+
+            @php
+              $clientIdx = 0;
+              $clientCount = count(get_field('clients'));
+            @endphp
+
+            @while(have_rows('clients')) @php(the_row())
+
+              @if($clientIdx % 4 === 0)
+                <div class="clientSlider__slide gsap__slide">
+                  <div class="container">
+                    <div class="flex middle-xs">
+              @endif
+
+              <div class="col-xs-3 clientSlider__imageWrapper">
+                <img src="{{ get_sub_field('image') }}" />
+              </div>
+
+              @if( ($clientIdx + 1) % 4 === 0  || ($clientIdx + 1) === $clientCount)
+                    </div>
+                  </div>
+                </div>
+              @endif
+
+              @php
+                $clientIdx = $clientIdx + 1;
+              @endphp
+            @endwhile
+          </div>
+          <div class="clientSlider__controls">
+            <a class="clientSlider__next" href="" title="Next"></a>
+            <a class="clientSlider__prev" href="" title="Previous"></a>
+          </div>
+        </div>
+      @endif
+    @endif
+
     @if(have_rows('capabilities'))
-      <div class="panel">
+      @php
+        $capabilitiesIdx = 0;
+      @endphp
+      <div class="panel marginBottom--xl">
         <div class="container">
-          <h1 class="text-thinHeader line--xxxl underscore marginBottom--xxl">Capabilities</h1>
+          <h2 class="text-thinHeader line--xl underscore--red marginBottom--xxl">Disciplines</h2>
 
           <div class="flex">
 
             @while(have_rows('capabilities')) @php(the_row())
-              <div class="col-xs-12 col-lg-6 marginBottom--xl capability">
-                <div class="flex">
-                  <div class="col-xs-8 col-xs-offset-2 col-md-3 col-md-offset-0"><img class="capability__image" src="{{get_sub_field('image')}}" alt=""></div>
-                  <div class="col-xs-12 col-md-9 capability__content">
-                    <h2>{{get_sub_field('title')}}</h2>
-                    <p>{{get_sub_field('description')}}</p>
+
+              @if($capabilitiesIdx % 2 === 0)
+                <div class="col-xs-12 capability capability--left">
+                  <div class="flex">
+                    <div class="col-xs-12 col-md-6 capability__imageWrapper">
+                      <img class="capability__image" src="{{get_sub_field('image')}}" alt="">
+                    </div>
+                    <div class="col-xs-12 col-md-6 capability__content">
+                      <h4>{{get_sub_field('title')}}</h4>
+                      <p>{{get_sub_field('description')}}</p>
+                    </div>
                   </div>
+                  <div class='capability__straightDivider'></div>
                 </div>
-              </div>
+              @endif
+
+              @if($capabilitiesIdx % 2 === 1)
+                <div class="col-xs-12 capability capability--right">
+                  <div class="flex">
+                    <div class="col-xs-12 col-md-6 capability__content">
+                      <h4>{{get_sub_field('title')}}</h4>
+                      <p>{{get_sub_field('description')}}</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 capability__imageWrapper">
+                      <img class="capability__image" src="{{get_sub_field('image')}}" alt="">
+                    </div>
+                  </div>
+                  <div class='capability__straightDivider'></div>
+                </div>
+              @endif
+
+
+              @php
+                $capabilitiesIdx = $capabilitiesIdx + 1;
+              @endphp
             @endwhile
 
           </div>
@@ -59,7 +134,7 @@
 
     <div class="leadershipSlider">
       <div class="container">
-        <h1 class="text-thinHeader leadershipSlider__title line--xxl underscore">Leadership</h1>
+        <h2 class="text-thinHeader leadershipSlider__title line--xxl underscore--red">Leadership</h2>
       </div>
 
       @php
@@ -83,8 +158,17 @@
                 </div>
                 <div class="col-xs-12 last-md first-xs col-md-6 col-lg-6 leadershipSlider__textWrapper">
                   <h6 class="leadershipSlider__name">{{ get_the_title() }}</h6>
-                  <h5><strong>{{ the_field( 'job_title' ) }}</strong></h5>
-                  <div class="leadershipSlider__description">{{ the_field( 'description' ) }}</div>
+                  <h5 class="leadershipSlider__jobTitle">{{ the_field( 'job_title' ) }}</h5>
+                  {{--< div class="leadershipSlider__description">{{ the_field( 'description' ) }}</ div>--}}
+
+                  @if (get_field( 'behance_link' ))
+                    <a class="leadershipSlider__social" target="_blank" href="{{ the_field( 'behance_link' ) }}">@include('partials.svg-behance')</a>
+                  @endif
+
+                  @if (get_field( 'linkedin_link' ))
+                    <a class="leadershipSlider__social" target="_blank" href="{{ the_field( 'linkedin_link' ) }}">@include('partials.svg-linkedin')</a>
+                  @endif
+
                 </div>
               </div>
             </div>
